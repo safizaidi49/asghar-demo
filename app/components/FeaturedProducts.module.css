@@ -1,6 +1,6 @@
 .featureSection {
     width: 100%;
-    padding: 60px 40px;
+    padding: 2%;
     background: #fff;
 }
 
@@ -8,7 +8,7 @@
     font-family: var(--font-poppins, Poppins, sans-serif);
     font-size: clamp(28px, 3vw, 38px);
     font-weight: 300;
-    margin-bottom: 40px;
+    margin-bottom: 2%;
     color: #5f5f5f;
 }
 

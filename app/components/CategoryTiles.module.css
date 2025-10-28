@@ -34,9 +34,12 @@
 .caption {
   margin-top: 12px;
   text-align: center;
-  font-size: 13px;
+  font-size: 17px;
   letter-spacing: .08em;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
-  color: #5a6b7b;
+  color: #5f5f5f;
+}
+.caption:hover{
+  text-decoration: none;
 }

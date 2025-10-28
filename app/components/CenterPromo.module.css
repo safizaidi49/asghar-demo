@@ -33,7 +33,7 @@
 .title {
   margin: 0 0 18px;
   font-weight: 300;                          /* per spec */
-  font-size: clamp(30px, 5.2vw, 58px);       /* big and responsive */
+  font-size: clamp(30px, 5.2vw, 44px);       /* big and responsive */
   line-height: 1.15;
 }
 
@@ -41,7 +41,7 @@
 .rule {
   width: 56px;
   height: 3px;
-  background: #D8B15A;
+  background: #FCBC3D;
   border-radius: 2px;
   margin: 12px auto 26px;                   /* centers the rule */
 }

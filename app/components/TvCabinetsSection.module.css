@@ -30,7 +30,7 @@
 .title {
   margin: 0 0 12px;
   font-weight: 300;          /* heading = 300 */
-  font-size: clamp(30px, 4.2vw, 56px);
+  font-size: clamp(30px, 4.2vw, 44px);
   line-height: 1.15;
   color: #5F5F5F;
 }
@@ -41,7 +41,7 @@
   height: 3px;
   margin: 12px auto 22px;
   border-radius: 2px;
-  background: #D8B15A;       /* gold divider */
+  background: #FCBC3D;       /* gold divider */
 }
 
 /* CTA */
