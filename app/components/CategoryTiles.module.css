@@ -1,10 +1,11 @@
 /* app/components/CategoryTiles.module.css */
 
+/* --- Desktop / default --- */
 .wrap {
-  max-width: none;         /* remove cap */
+  max-width: none;
   width: 100%;
   margin: 0;
-  padding: 18px 24px;      /* small page padding only */
+  padding: 18px 24px;
 }
 
 .grid {
@@ -16,9 +17,15 @@
 @media (max-width: 1280px) { .grid { grid-template-columns: repeat(4, 1fr); } }
 @media (max-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 768px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px)  { .grid { grid-template-columns: 1fr; } }
 
-.card { text-decoration: none; color: inherit; }
+.card,
+.card:visited,
+.card:hover,
+.card:focus,
+.card:active {
+  text-decoration: none;
+  color: inherit;
+}
 
 .figure {
   width: 100%;
@@ -31,6 +38,13 @@
   line-height: 0;
 }
 
+.figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .caption {
   margin-top: 12px;
   text-align: center;
@@ -40,6 +54,10 @@
   text-transform: uppercase;
   color: #5f5f5f;
 }
-.caption:hover{
-  text-decoration: none;
+
+/* --- Mobile only (<= 480px) --- */
+@media (max-width: 480px) {
+  .wrap { padding: 6px; }
+  .grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .caption { margin-top: 6px; font-size: 11px; font-weight: 500; letter-spacing: .06em; }
 }

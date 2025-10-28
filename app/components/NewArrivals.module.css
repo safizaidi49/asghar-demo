@@ -1,18 +1,16 @@
-/* ===============================
-   NewArrivals.module.css
-   Two-column split: image (left), content (right)
-   Typography: Poppins
-   =============================== */
+/* app/components/NewArrivals.module.css */
 
-.section {
-  width: 100%;
-}
+.section { width: 100%; background:#fff; }
 
+/* Two columns at all sizes */
 .grid {
+  --divider: 2px;                    /* thin vertical line (white) */
   display: grid;
   grid-template-columns: 1fr 1fr;
+  column-gap: 0px;      /* looks like your reference */
   width: 100%;
-  min-height: clamp(360px, 55vw, 560px);
+  background: #fff;                  /* the divider color */
+  min-height: clamp(260px, 55vw, 560px);
 }
 
 /* LEFT IMAGE */
@@ -22,9 +20,9 @@
   height: 100%;
   overflow: hidden;
 }
-
 .image {
   object-fit: cover;
+  object-position: left center;      /* show more of the couch like ref */
 }
 
 /* RIGHT CONTENT (teal panel) */
@@ -32,13 +30,14 @@
   display: grid;
   place-items: center;
   width: 100%;
-  background: #7AB1B4; /* teal background */
+  background: #7AB1B4;
+  padding: 0;
 }
 
-/* Inner content layout */
+/* Inner block */
 .content {
   width: min(90%, 720px);
-  display: flex;              /* stack vertically */
+  display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -46,40 +45,31 @@
   font-family: var(--font-poppins, Poppins, system-ui, sans-serif);
 }
 
-/* Title (weight 300) */
+/* Desktop defaults */
 .title {
-  font-weight: 300; /* per spec */
+  font-weight: 300;
   letter-spacing: 0.04em;
   font-size: clamp(28px, 4.6vw, 44px);
   line-height: 1.1;
   margin: 0 0 12px;
 }
-
-/* Subheading (weight 400) */
 .sub {
-  font-weight: 400; /* per spec */
+  font-weight: 400;
   font-size: clamp(14px, 1.8vw, 18px);
   margin: 0 0 22px;
   opacity: 0.95;
 }
-
-/* Divider ABOVE the CTA */
 .rule {
-  display: block;        /* force own line */
+  display: block;
   width: 56px;
   height: 3px;
-  background: #f4c165;   /* the golden line */
+  background: #f4c165;
   border-radius: 2px;
-  margin: 10px auto 26px; /* center + gap before the button */
+  margin: 10px auto 26px;
 }
-
-
-/* CTA button */
-
 .btn {
   display: inline-block;
-  
-  color: white;
+  color: #fff;
   background: transparent;
   text-decoration: none;
   text-transform: uppercase;
@@ -87,18 +77,29 @@
   font-weight: 500;
   font-size: 20px;
 }
-.btn:hover {
-  
-  color: #FCBC3D;
-   text-decoration: none;
-  
+.btn:hover { color: #FCBC3D; text-decoration: none; }
+
+/* ===== Mobile (≤520px) — match ref exactly ===== */
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;         /* keep split */
+    column-gap: 0px;
+    min-height: clamp(180px, 45vw, 320px);  /* similar height ratio to ref */
+  }
+  .content { width: 92%; }
+
+  /* requested sizes */
+  .title { font-size: 15px; margin-bottom: 8px; line-height: 1.2em; }
+  .sub   { font-size: 9px;  margin-bottom: 12px; line-height: 1.2em; letter-spacing: 1.1px;}
+  .rule  { width: 40px; height: 2px; margin: 6px auto 12px; }
+  .btn   { font-size: 10px; }
+
+  /* make sure image isn’t over-zoomed */
+  .image { object-position: left center; }
 }
 
-/* RESPONSIVE */
-@media (max-width: 992px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-  .media { min-height: 46vw; }
-  .contentCol { padding: 48px 0; }
+/* ===== Small tablets (521–992px) ===== */
+@media (min-width: 521px) and (max-width: 992px) {
+  .grid { min-height: clamp(240px, 48vw, 440px); }
+  .content { width: 88%; }
 }

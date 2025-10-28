@@ -9,7 +9,7 @@ export default function TvCabinetsSection() {
       <div className={styles.copy}>
         <p className={styles.eyebrow}>Premium TV Centers</p>
 
-        <h2 className={styles.title}>Entertain in Style</h2>
+        <h2 className={styles.title}>ENTERTAIN IN STYLE</h2>
 
         <span className={styles.rule} aria-hidden="true" />
 

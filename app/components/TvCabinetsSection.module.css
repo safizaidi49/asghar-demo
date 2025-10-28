@@ -1,8 +1,9 @@
+/* app/components/TvCabinetsSection.module.css */
 /* TV Cabinets (centered, like your reference) */
 
 .section {
   width: 100%;
-  background: #F9F4EE;       /* soft cream background */
+  background: #F9F4EE;       /* soft cream */
   color: #5F5F5F;
   display: flex;
   flex-direction: column;
@@ -13,9 +14,7 @@
 }
 
 /* top copy block */
-.copy {
-  max-width: 940px;
-}
+.copy { max-width: 940px; }
 
 .eyebrow {
   margin: 0 0 14px;
@@ -41,13 +40,12 @@
   height: 3px;
   margin: 12px auto 22px;
   border-radius: 2px;
-  background: #FCBC3D;       /* gold divider */
+  background: #FCBC3D;
 }
 
 /* CTA */
 .cta {
   display: inline-block;
-  
   color: #5F5F5F;
   background: transparent;
   text-decoration: none;
@@ -56,33 +54,48 @@
   font-weight: 500;
   font-size: 20px;
 }
-.cta:hover {
-  
-  color: #FCBC3D;
-   text-decoration: none;
-  
-}
+.cta:hover { color: #FCBC3D; text-decoration: none; }
 
+/* cabinet image centered at bottom */
+.figure { width: min(1100px, 92vw); margin: 48px auto 30px; }
+.img { width: 100%; height: auto; display: block; }
 
-/* cabinet image centered at bottom, not full width */
-.figure {
-  width: min(1100px, 92vw);
-  margin: 48px auto 30px;
-}
-.img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* responsive tweaks */
+/* ===== Tablet tweaks ===== */
 @media (max-width: 900px) {
   .section { padding: 70px 16px 30px; }
-  .cta { font-size: 16px; padding: 11px 22px; }
+  .cta { font-size: 16px; }
   .figure { width: min(980px, 94vw); margin: 38px auto 24px; }
 }
-@media (max-width: 560px) {
-  .eyebrow { font-size: 14px; letter-spacing: 0.16em; }
-  .title   { font-size: 30px; }
-  .figure  { width: 94vw; }
+
+/* ===== PHONE (≤520px): match the first image exactly ===== */
+@media (max-width: 520px) {
+  /* tighter box */
+  .section { padding: 26px 14px 18px; }
+
+  /* EXACT sizes you asked */
+  .eyebrow {
+    font-size: 9px !important;
+    line-height: 1em !important;
+    letter-spacing: 0.18em;
+    margin-bottom: 8px;
+  }
+  .title {
+    font-size: 20px !important;
+    line-height: 1.2em !important;
+    margin-bottom: 8px;
+  }
+
+  .rule {
+    width: 40px;
+    height: 2px;
+    margin: 6px auto 10px;
+  }
+
+  .cta {
+    font-size: 10px !important;
+    letter-spacing: 0.12em;
+  }
+
+  /* smaller cabinet image and less gap so the block isn't tall */
+  .figure { width: 88vw; margin: 18px auto 12px; }
 }

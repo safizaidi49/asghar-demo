@@ -1,27 +1,29 @@
+/* ===== Desktop / default (unchanged) ===== */
 .section {
   width: 100%;
   background: #F5F5F5;
 }
 
-/* 4 equal columns; no weird stretching */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   max-width: 1600px;
   margin: 0 auto;
   padding: 32px 16px;
+  gap: 0; /* keep separators flush */
+  box-sizing: border-box;
 }
 
-/* each cell */
 .item {
   position: relative;
   text-align: center;
   padding: 20px 24px;
   font-family: var(--font-poppins, "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif);
   color: #5F5F5F;
+  background: transparent;
 }
 
-/* vertical separator drawn by the cell itself (clean + always centered) */
+/* vertical separators on desktop via pseudo element */
 .item::after {
   content: "";
   position: absolute;
@@ -29,10 +31,10 @@
   top: 50%;
   transform: translateY(-50%);
   width: 1px;
-  height: 72px;          /* separator height */
+  height: 72px;
   background: #DCDCDC;
 }
-.item:last-child::after { display: none; }  /* no line after the last item */
+.item:last-child::after { display: none; }
 
 .icon {
   width: 50px;
@@ -43,7 +45,7 @@
 
 .title {
   margin: 6px 0 6px;
-  font-size: 20px;       /* requested */
+  font-size: 20px;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: .02em;
@@ -51,23 +53,51 @@
 
 .subtitle {
   margin: 0;
-  font-size: 15px;       /* requested */
+  font-size: 15px;
   line-height: 1.5;
   opacity: .95;
 }
 
-/* ------------------ Responsive ------------------ */
+/* ===== Tablet (≤900px): 2 columns with cross divider ===== */
 @media (max-width: 900px) {
-  .grid { grid-template-columns: repeat(2, 1fr); gap: 0; }
+  .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    padding: 24px 12px;
+    gap: 0 !important;                  /* lines meet perfectly */
+  }
 
-  /* remove the vertical line between the two columns on each row */
-  .item:nth-child(2n)::after { display: none; }
+  /* kill desktop pseudo line */
+  .item::after { display: none !important; }
 
-  /* add row separators for the first two items (top row) */
-  .item:nth-child(-n+2) { border-bottom: 1px solid #E5E5E5; }
+  /* Cross: right border on first column, bottom border on first row */
+  .item {
+    border: 0;                          /* reset any theme borders */
+    box-sizing: border-box;
+  }
+  .item:nth-child(2n+1) {               /* first column items */
+    border-right: 1px solid #E5E5E5;
+  }
+  .item:nth-child(-n+2) {               /* top row (items 1 & 2) */
+    border-bottom: 1px solid #E5E5E5;
+  }
 }
+
+/* ===== Phone (≤520px): same 2×2 cross, tighter spacing ===== */
 @media (max-width: 520px) {
-  .grid { grid-template-columns: 1fr; }
-  .item::after { display: none; }
-  .item + .item { border-top: 1px solid #E5E5E5; }
+  .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    padding: 18px 10px;
+  }
+  .item {
+    padding: 16px 10px;
+  }
+   /* Mobile typography */
+  .title {
+    font-size: 15px !important;
+  }
+  .subtitle {
+    font-size: 10px !important;
+  }
+  .item:nth-child(2n+1) { border-right: 1px solid #E5E5E5; }
+  .item:nth-child(-n+2) { border-bottom: 1px solid #E5E5E5; }
 }

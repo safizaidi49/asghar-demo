@@ -1,100 +1,96 @@
 .featureSection {
-    width: 100%;
-    padding: 2%;
-    background: #fff;
+  width: 100%;
+  padding: 2%;
+  background: #fff;
 }
 
 .title {
-    font-family: var(--font-poppins, Poppins, sans-serif);
-    font-size: clamp(28px, 3vw, 38px);
-    font-weight: 300;
-    margin-bottom: 2%;
-    color: #5f5f5f;
+  font-family: var(--font-poppins, Poppins, sans-serif);
+  font-size: clamp(22px, 3vw, 38px);
+  font-weight: 300;
+  margin-bottom: 2%;
+  color: #5f5f5f;
 }
 
+/* ---------- Desktop / Tablet default: grid ---------- */
 .grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 24px;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  width: 100%;
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #ececec;
 }
 
-.imgWrap {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1/1;
-}
-
-.image {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
+.imgWrap { position: relative; width: 100%; aspect-ratio: 1 / 1; } /* you can switch to 4/3 below */
+.image   { object-fit: cover; width: 100%; height: 100%; }
 
 .badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: #e53935;
-    color: #fff;
-    font-size: 12px;
-    padding: 6px 8px;
-    border-radius: 999px;
-    font-weight: 600;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #e53935;
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  font-weight: 600;
 }
 
-.info {
-    padding: 12px;
-    font-family: var(--font-poppins, Poppins, sans-serif);
+.info { padding: 12px; font-family: var(--font-poppins, Poppins, sans-serif); }
+
+.name     { font-size: 16px; font-weight: 500; margin: 6px 0; color: #333; }
+.priceRow { display: flex; align-items: baseline; gap: 10px; }
+.price    { font-size: 15px; font-weight: 700; color: #e63946; }
+.oldPrice { font-size: 14px; color: #999; text-decoration: line-through; }
+
+/* ---------- Desktop/tablet breakpoints (unchanged) ---------- */
+@media (max-width: 1280px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-.name {
-    font-size: 16px;
-    font-weight: 500;
-    margin: 6px 0;
-    color: #333;
+/* ---------- MOBILE (≤768px): 2-up horizontal slider, no 3rd peek ---------- */
+@media (max-width: 768px) {
+  .featureSection { overflow: hidden; }
+
+  .grid {
+    --gap: 12px;                           /* space between cards */
+    display: flex;                         /* become a horizontal track */
+    gap: var(--gap);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0;                            /* no inner padding → prevents peeking */
+    margin: 0;
+    scrollbar-width: none;                 /* Firefox hide scrollbar */
+    scroll-padding-inline: 0;              /* snap at the very edge */
+  }
+  .grid::-webkit-scrollbar { display: none; } /* WebKit */
+
+  /* EXACTLY two cards per viewport width */
+  .card {
+    flex: 0 0 calc((100% - var(--gap)) / 2);  /* 2 cards + 1 gap = 100% */
+    box-sizing: border-box;                   /* include border in width calc */
+    scroll-snap-align: start;
+  }
+
+  /* (Optional) Make images rectangular like your reference */
+  .imgWrap { aspect-ratio: 4 / 3; }
+
+  /* tighten type a bit for compact tiles */
+  .name     { font-size: 13px; line-height: 1.3; min-height: 2.6em; }
+  .price    { font-size: 14px; }
+  .oldPrice { font-size: 12px; }
 }
 
-.priceRow {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-}
-
-.price {
-    font-size: 15px;
-    font-weight: 700;
-    color: #e63946;
-}
-
-.oldPrice {
-    font-size: 14px;
-    color: #999;
-    text-decoration: line-through;
-}
-
-@media (max-width:1280px) {
-    .grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width:768px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width:500px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
+/* IMPORTANT: keep slider active even below 500px (remove the old 1-column rule) */
+@media (max-width: 500px) {
+  .grid { display: flex; }   /* DO NOT revert to 1 column */
 }

@@ -3,6 +3,10 @@
 import styles from "./CustomizeSection.module.css";
 
 export default function CustomizeSection() {
+  // YT needs playlist=<id> to loop an individual video
+  const id = "3x56FX1ptlk";
+  const src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&mute=1&loop=1&playlist=${id}&controls=0&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1&fs=0&disablekb=1&enablejsapi=1`;
+
   return (
     <section className={styles.section}>
       <div className={styles.headingArea}>
@@ -14,11 +18,11 @@ export default function CustomizeSection() {
 
       <div className={styles.videoWrapper}>
         <iframe
-          src="https://www.youtube.com/embed/3x56FX1ptlk?autoplay=0&mute=0&loop=1&controls=1&modestbranding=1&playsinline=1"
+          src={src}
           title="Fully Customizable Curva Sofa | Comfort Meets Personal Style"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        ></iframe>
+          allow="autoplay; encrypted-media; picture-in-picture; clipboard-write"
+          allowFullScreen={false}
+        />
       </div>
     </section>
   );

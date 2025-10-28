@@ -1,15 +1,17 @@
+/* app/components/PromoSplit.module.css */
+
 /* Whole section shares one background color */
 .wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   width: 100%;
-  min-height: 560px;            /* adjust if you want it taller/shorter */
+  min-height: 560px;            /* desktop height feel */
   padding: 24px 28px;           /* edge padding like your reference */
-  gap: 24px;
+  gap:10px;
 }
 
-/* LEFT: keep image large, sitting visually on the baseline */
+/* LEFT: image */
 .left {
   display: flex;
   align-items: flex-end;        /* anchor image bottom visually */
@@ -23,20 +25,20 @@
 .right {
   display: flex;
   flex-direction: column;
-  align-items: center;          /* center like the screenshot */
+  align-items: center;          /* centered like the screenshot */
   text-align: center;
   gap: 14px;
 }
 
 /* Logos row at the top */
 .logos {
-  width: 220px;                 /* tweak to match your screenshot width */
+  width: 220px;
   height: auto;
   object-fit: contain;
   margin-bottom: 4px;
 }
 
-/* Typography (Poppins + #5F5F5F should already be global) */
+/* Typography */
 .eyebrow {
   margin: 0;
   font-size: 17px;
@@ -66,7 +68,6 @@
 /* CTA */
 .cta {
   display: inline-block;
-  
   color: #5F5F5F;
   background: transparent;
   text-decoration: none;
@@ -75,32 +76,49 @@
   font-weight: 500;
   font-size: 20px;
 }
-.cta:hover {
-  
-  color: #FCBC3D;
-   text-decoration: none;
-  
-}
+.cta:hover { color: #FCBC3D; text-decoration: none; }
 
-/* Responsive */
+/* ---------- Tablet (≤1100px) ---------- */
 @media (max-width: 1100px) {
   .title { font-size: 40px; }
   .logos { width: 200px; }
 }
+
+/* ---------- MOBILE (≤900px): keep SIDE-BY-SIDE ---------- */
+/* Do NOT stack; shrink spacing and type only */
 @media (max-width: 900px) {
   .wrap {
-    grid-template-columns: 1fr;
-    min-height: 0;
-    padding: 18px 16px 28px;
+    grid-template-columns: 1fr 1fr;     /* stay split */
+    min-height: auto;
+    padding: 14px 14px;
+    gap: 10px;
   }
-  .left { order: 1; justify-content: center; }
-  .right { order: 0; }
-  .figure { width: 92vw; }
-  .title { font-size: 34px; }
-  .cta { font-size: 18px; padding: 11px 22px; }
+  .left { align-items: center; justify-content: center; }
+  .figure { width: 100%; }              /* let image scale with column */
+  .logos { width: 150px; }
+
+  /* target sizes requested for mobile-ish */
+  .eyebrow {
+    font-size: 9px !important;
+    line-height: 1em !important;
+    letter-spacing: 0.26em;
+  }
+  .title {
+    font-size: 15px !important;
+    line-height: 1.2em !important;
+  }
+  .rule {
+    width: 40px;
+    height: 2px;
+    margin: 6px 0 8px;
+  }
+  .cta {
+    font-size: 10px !important;
+  }
 }
+
+/* ---------- Small phones (≤520px) ---------- */
 @media (max-width: 520px) {
-  .title { font-size: 30px; }
-  .logos { width: 180px; }
-  .cta { font-size: 16px; padding: 10px 20px; }
+  .wrap { padding: 12px 10px; gap: 8px; }
+  .logos { width: 90%; }
 }
