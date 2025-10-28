@@ -1,0 +1,53 @@
+/* Bar */
+.bar{
+  background:#08146a;          /* your blue */
+  color:#fff;
+  height:40px;                  /* desktop height */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:var(--font-poppins, Poppins, sans-serif);
+}
+
+/* Inline group: arrows tight to the text */
+.group{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;                     /* tiny, controlled gap */
+  max-width:90vw;
+}
+
+/* Message */
+.msgWrap{
+  min-width:0;                  /* allow ellipsis */
+}
+.msg{
+  font-weight:600;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  letter-spacing:.2px;
+}
+
+/* Arrows */
+.arrow{
+  appearance:none;
+  background:transparent;
+  border:0;
+  padding:0;
+  width:24px; height:24px;      /* small, close to text */
+  display:grid; place-items:center;
+  cursor:pointer;
+  color:#fff;
+}
+.arrow svg{ width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:2; }
+.arrow:focus{ outline:none; }
+
+/* Mobile tweaks */
+@media (max-width: 768px){
+  .bar{ height:34px; }
+  .group{ gap:8px; }
+  .msg{ font-size:13px; }
+  .arrow{ width:22px; height:22px; }
+  .arrow svg{ width:14px; height:14px; }
+}

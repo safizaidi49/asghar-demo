@@ -27,7 +27,7 @@ export const demoProducts: Product[] = [
   },
   {
     id: "p3",
-    title: "Wingback Velvet Bed (Grey)",
+    title: "Wingback Velvet Bed",
     image: "/demo-products/Wingback-Velvet-Bed-Grey-color_-600x600.webp",
     price: 999,
     compareAtPrice: 1299,
