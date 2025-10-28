@@ -13,20 +13,17 @@ export default function HeroSlider({
   interval?: number;
 }) {
   const [i, setI] = useState(0);
-  const [fade, setFade] = useState(false); // toggles opacity for a smooth cross-fade
+  const [fade, setFade] = useState(false);
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  // autoplay
   useEffect(() => {
     start();
     return stop;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [images.length, interval]);
 
-  // trigger fade when index changes
   useEffect(() => {
     setFade(true);
-    // allow the browser to paint, then fade in
     const id = requestAnimationFrame(() => setFade(false));
     return () => cancelAnimationFrame(id);
   }, [i]);
@@ -37,7 +34,6 @@ export default function HeroSlider({
       setI((p) => (p + 1) % images.length);
     }, interval);
   };
-
   const stop = () => {
     if (timer.current) clearInterval(timer.current);
     timer.current = null;
@@ -49,16 +45,18 @@ export default function HeroSlider({
         position: "relative",
         width: "100%",
         overflow: "hidden",
+        contain: "layout paint", // optional: isolates tiny reflows
       }}
       onMouseEnter={stop}
       onMouseLeave={start}
     >
-      {/* One image in normal flow so the slider keeps natural height */}
+      {/* keep one image in normal flow, but DON'T remount the wrapper */}
       <div
-        key={images[i].src}
+        /* key removed */
         style={{
-          transition: "opacity 800ms ease", // smoother than before
+          transition: "opacity 800ms ease",
           opacity: fade ? 0 : 1,
+          willChange: "opacity",
         }}
       >
         <Image
@@ -68,15 +66,11 @@ export default function HeroSlider({
           height={0}
           sizes="100vw"
           priority
-          style={{
-            width: "100%",
-            height: "auto", // natural height
-            display: "block",
-          }}
+          style={{ width: "100%", height: "auto", display: "block" }}
         />
       </div>
 
-      {/* Capsule dots centered at bottom, like your reference */}
+      {/* dots */}
       <div
         style={{
           position: "absolute",
@@ -87,7 +81,6 @@ export default function HeroSlider({
           gap: 10,
           alignItems: "center",
           zIndex: 2,
-          // make sure dots are visible on any banner
           filter: "drop-shadow(0 1px 2px rgba(0,0,0,.35))",
         }}
       >
@@ -99,7 +92,7 @@ export default function HeroSlider({
               onClick={() => setI(idx)}
               aria-label={`Go to slide ${idx + 1}`}
               style={{
-                width: active ? 28 : 12,     // active looks like a longer pill
+                width: active ? 28 : 12,
                 height: 8,
                 borderRadius: 999,
                 border: "none",
