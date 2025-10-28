@@ -1,0 +1,27 @@
+.section {
+  width: 100%;
+}
+
+/* Centered at a given width (no max-width constraints) */
+.centerWrap {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.centerImg {
+  display: block;
+  height: auto;
+  /* Prevent any global rules like max-width:80% from shrinking it */
+  max-width: none !important;
+}
+
+/* Full-bleed option */
+.fullWrap {
+  width: 100%;
+}
+.fullImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none !important;
+}

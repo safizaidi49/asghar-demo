@@ -1,0 +1,42 @@
+/* app/components/CategoryTiles.module.css */
+
+.wrap {
+  max-width: none;         /* remove cap */
+  width: 100%;
+  margin: 0;
+  padding: 18px 24px;      /* small page padding only */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 32px;
+}
+
+@media (max-width: 1280px) { .grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px)  { .grid { grid-template-columns: 1fr; } }
+
+.card { text-decoration: none; color: inherit; }
+
+.figure {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 0;
+  box-shadow: none;
+  line-height: 0;
+}
+
+.caption {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: .08em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #5a6b7b;
+}

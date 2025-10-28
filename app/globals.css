@@ -1,0 +1,82 @@
+/* ---------------------------
+   Tailwind v4 base
+--------------------------- */
+@import "tailwindcss";
+
+/* ---------------------------
+   Theme tokens
+--------------------------- */
+:root {
+  /* brand text color */
+  --text: #5F5F5F;
+
+  /* base surfaces */
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* ---------------------------
+   Tailwind theme inline (optional)
+   – keep if you're using it elsewhere
+--------------------------- */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  /* Replace geist with poppins variable coming from next/font */
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* ---------------------------
+   Global element defaults
+--------------------------- */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  /* 👇 Poppins is injected in <html className={poppins.variable}> from layout.tsx */
+  font-family: var(--font-poppins), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Brand color + surfaces */
+  color: var(--text);
+  background: var(--background);
+
+  /* Better text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optional: reset buttons/links to inherit fonts */
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+/* Anchor defaults (subtle) */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* Utility: container width similar to your site */
+.container-lg {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+/* Prevent images from overflowing by default */
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

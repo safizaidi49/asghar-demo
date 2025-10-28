@@ -1,0 +1,102 @@
+/* ===============================
+   NewArrivals.module.css
+   Two-column split: image (left), content (right)
+   Typography: Poppins
+   =============================== */
+
+.section {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  min-height: clamp(360px, 55vw, 560px);
+}
+
+/* LEFT IMAGE */
+.media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+/* RIGHT CONTENT (teal panel) */
+.contentCol {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  background: #7AB1B4; /* teal background */
+}
+
+/* Inner content layout */
+.content {
+  width: min(90%, 720px);
+  display: flex;              /* stack vertically */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  font-family: var(--font-poppins, Poppins, system-ui, sans-serif);
+}
+
+/* Title (weight 300) */
+.title {
+  font-weight: 300; /* per spec */
+  letter-spacing: 0.04em;
+  font-size: clamp(28px, 4.6vw, 56px);
+  line-height: 1.1;
+  margin: 0 0 12px;
+}
+
+/* Subheading (weight 400) */
+.sub {
+  font-weight: 400; /* per spec */
+  font-size: clamp(14px, 1.8vw, 18px);
+  margin: 0 0 22px;
+  opacity: 0.95;
+}
+
+/* Divider ABOVE the CTA */
+.rule {
+  display: block;        /* force own line */
+  width: 56px;
+  height: 3px;
+  background: #f4c165;   /* the golden line */
+  border-radius: 2px;
+  margin: 10px auto 26px; /* center + gap before the button */
+}
+
+/* CTA (weight 500) */
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 500;       /* per spec */
+  letter-spacing: 0.02em;
+  transition: transform .2s ease, background-color .2s ease, color .2s ease;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #333;
+  transform: translateY(-1px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .media { min-height: 46vw; }
+  .contentCol { padding: 48px 0; }
+}
