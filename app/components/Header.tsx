@@ -103,7 +103,7 @@ export default function Header({ cartCount = 0, wishCount = 0 }: Props) {
       {/* ============== DESKTOP ROW ============== */}
       <div className={styles.dRow}>
         <Link href="/" className={styles.dLogo} aria-label="Asghar Furniture Home">
-          <Image src="/logo.svg" alt="Asghar Furniture" width={165} height={58} priority />
+          <Image src="/media/logo.svg" alt="Asghar Furniture" width={165} height={58} priority />
         </Link>
 
         <nav className={styles.dNav} aria-label="Primary">
