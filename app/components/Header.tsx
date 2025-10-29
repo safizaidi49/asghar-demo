@@ -37,7 +37,7 @@ export default function Header({ cartCount = 0, wishCount = 0 }: Props) {
         </button>
 
         <Link href="/" className={styles.logoLink} aria-label="Asghar Furniture Home">
-          <Image src="/logo.svg" alt="Asghar Furniture" width={120} height={42} priority />
+          <Image src="/media/logo.svg" alt="Asghar Furniture" width={120} height={42} priority />
         </Link>
 
         <div className={styles.mIcons}>
