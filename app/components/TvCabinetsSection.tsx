@@ -21,7 +21,7 @@ export default function TvCabinetsSection() {
       <div className={styles.figure}>
         {/* transparent image, centered below the text */}
         <Image
-          src="/banners/tvcabinets.webp"  /* put the file here */
+          src="/media/banners/tvcabinets.webp"  /* put the file here */
           alt="Premium TV cabinet"
           width={1600}
           height={420}

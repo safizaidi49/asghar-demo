@@ -12,7 +12,7 @@ export const demoProducts: Product[] = [
   {
     id: "p1",
     title: "Novelle Round Velvet Bed",
-    image: "/demo-products/Novelle-Round-Bed-600x600.webp",
+    image: "/media/demo-products/Novelle-Round-Bed-600x600.webp",
     price: 3999,
     compareAtPrice: 4999,
     currency: "AED",
@@ -20,7 +20,7 @@ export const demoProducts: Product[] = [
   {
     id: "p2",
     title: "Elan Verde Bed",
-    image: "/demo-products/Elan-Verde-Bed.natural-webp-600x600.webp",
+    image: "/media/demo-products/Elan-Verde-Bed.natural-webp-600x600.webp",
     price: 3599,
     compareAtPrice: 3999,
     currency: "AED",
@@ -28,7 +28,7 @@ export const demoProducts: Product[] = [
   {
     id: "p3",
     title: "Wingback Velvet Bed",
-    image: "/demo-products/Wingback-Velvet-Bed-Grey-color_-600x600.webp",
+    image: "/media/demo-products/Wingback-Velvet-Bed-Grey-color_-600x600.webp",
     price: 999,
     compareAtPrice: 1299,
     currency: "AED",
@@ -37,7 +37,7 @@ export const demoProducts: Product[] = [
   {
     id: "p4",
     title: "Channel Upholstered Bed",
-    image: "/demo-products/Channel-Upholstered-Bed-600x600.webp",
+    image: "/media/demo-products/Channel-Upholstered-Bed-600x600.webp",
     price: 999,
     compareAtPrice: 1699,
     currency: "AED",
@@ -46,7 +46,7 @@ export const demoProducts: Product[] = [
   {
     id: "p5",
     title: "Areeka 3 Seater Sofa",
-    image: "/demo-products/Areeka-3-seater-sofa-600x600.webp",
+    image: "/media/demo-products/Areeka-3-seater-sofa-600x600.webp",
     price: 1999,
     currency: "AED",
   },

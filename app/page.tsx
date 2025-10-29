@@ -18,25 +18,25 @@ export default function HomePage() {
     <main>
       <HeroSlider
         images={[
-          { src: "/slider/Slider1.webp", alt: "Modern Sofa – Slide 1" },
-          { src: "/slider/Slider2.webp", alt: "Bedroom Set – Slide 2" },
-          { src: "/slider/Slider3.webp", alt: "Dining Table – Slide 3" },
+          { src: "/media/slider/Slider1.webp", alt: "Modern Sofa – Slide 1" },
+          { src: "/media/slider/Slider2.webp", alt: "Bedroom Set – Slide 2" },
+          { src: "/media/slider/Slider3.webp", alt: "Dining Table – Slide 3" },
         ]}
         interval={4000}
       />
 
       <CategoryTiles
         items={[
-          { src: "/categories/flooring.webp", label: "FLOORINGS", href: "/category/floorings" },
-          { src: "/categories/curtains.webp", label: "CURTAINS", href: "/category/curtains" },
-          { src: "/categories/wallpapers.webp", label: "WALLPAPERS", href: "/category/wallpapers" },
-          { src: "/categories/office.webp", label: "OFFICES", href: "/category/offices" },
-          { src: "/categories/beddings.webp", label: "BEDDINGS", href: "/category/beddings" },
-          { src: "/categories/carpets.webp", label: "CARPETS", href: "/category/carpets" },
+          { src: "/media/categories/flooring.webp", label: "FLOORINGS", href: "/category/floorings" },
+          { src: "/media/categories/curtains.webp", label: "CURTAINS", href: "/category/curtains" },
+          { src: "/media/categories/wallpapers.webp", label: "WALLPAPERS", href: "/category/wallpapers" },
+          { src: "/media/categories/office.webp", label: "OFFICES", href: "/category/offices" },
+          { src: "/media/categories/beddings.webp", label: "BEDDINGS", href: "/category/beddings" },
+          { src: "/media/categories/carpets.webp", label: "CARPETS", href: "/category/carpets" },
         ]}
       />
       <FeatureSplit
-        imageSrc="/banners/bed-banner.webp"
+        imageSrc="/media/banners/bed-banner.webp"
         imageAlt="Inspiring bedroom"
         title="INSPIRING BEDROOMS"
         ctaLabel="SHOP NOW"
@@ -46,7 +46,7 @@ export default function HomePage() {
 
       <FeatureSplit
         reverse
-        imageSrc="/banners/living-room-banner.webp"
+        imageSrc="/media/banners/living-room-banner.webp"
         imageAlt="Comfort meets style"
         eyebrow="LUXURY LIVING MADE EASY"
         title="COMFORT MEETS STYLE"
@@ -58,7 +58,7 @@ export default function HomePage() {
       <FeaturedProducts />
       <PromoSplit
         bg="#F3F9F9"
-        bedSrc="/banners/glam.webp"
+        bedSrc="/media/banners/glam.webp"
         bedAlt="Emerald bed with gold trim"
         logosSrc="https://www.asgharfurniture.ae/wp-content/uploads/2025/09/Logos.svg"
         eyebrow="UP TO 12 MONTHS EMI PLANS"

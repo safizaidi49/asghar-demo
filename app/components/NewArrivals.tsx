@@ -11,7 +11,7 @@ export default function NewArrivals() {
         {/* LEFT: Image */}
         <div className={styles.media}>
           <Image
-            src="/banners/new-arrivals.webp"   // put the image here
+            src="/media/banners/new-arrivals.webp"   // put the image here
             alt="New arrivals living room scene"
             fill
             priority
