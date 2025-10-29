@@ -1,0 +1,46 @@
+/* app/products/pdp.module.css */
+.wrap {
+  max-width: 1240px;
+  margin: 20px auto 60px;
+  padding: 0 16px;
+}
+
+.breadcrumb {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 6px 0 14px;
+}
+.breadcrumb a { color: #6b7280; text-decoration: none; }
+.breadcrumb a:hover { color: #111827; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 28px;
+}
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: 1fr; gap: 18px; }
+}
+
+.right { position: relative; }
+.sticky { position: sticky; top: 88px; }
+
+.title { font-size: 28px; font-weight: 800; line-height: 1.15; margin: 0 0 6px; }
+.price { font-size: 30px; font-weight: 800; margin: 2px 0 12px; }
+.meta  { font-size: 12px; color: #6b7280; margin-bottom: 10px; }
+.short { color: #374151; margin: 12px 0; }
+
+.controls { display: flex; align-items: center; gap: 10px; margin: 12px 0; }
+.actions  { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+
+.btnPrimary { padding: 12px 14px; background: #111827; color: #fff; border-radius: 10px; border: 0; font-weight: 700; }
+.btnAccent  { padding: 12px 14px; background: #F59E0B; color: #111827; border-radius: 10px; border: 0; font-weight: 700; }
+.btnGhost   { width: 100%; padding: 11px 14px; background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; font-weight: 600; }
+
+.section { margin-top: 18px; }
+
+@media (max-width: 640px) {
+  .wrap { margin-top: 8px; }
+  .title { font-size: 22px; }
+  .price { font-size: 24px; }
+}

@@ -1,0 +1,42 @@
+/* app/components/ProductGallery.module.css */
+.root { width: 100%; }
+
+.main {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f8f8f8;
+  border: 1px solid #eee;
+}
+.main img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.thumbs {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+@media (max-width: 640px) {
+  .thumbs { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+}
+
+.thumb {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #fff;
+}
+.thumb img {
+  width: 100%;
+  height: 88px;
+  object-fit: cover;
+  display: block;
+}
+
+.active { outline: 2px solid #111827; outline-offset: 0; }
+.caption { font-size: 11px; color: #9ca3af; margin-top: 6px; }
