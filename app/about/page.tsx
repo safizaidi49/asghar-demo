@@ -13,19 +13,21 @@ export default function AboutPage() {
   return (
     <main className="about">
       {/* ===== Hero ===== */}
-      <section className="about__hero">
-        <Image
-          src="/media/about/About-us-Banner_af.webp" // <- replace with your file
-          alt="Dubai skyline with Asghar Furniture emblem"
-          fill
-          priority
-          sizes="100vw"
-          className="about__heroImg"
-        />
-        <div className="about__heroOverlay">
-          {/* keep empty for pure image hero (first thing after header) */}
-        </div>
-      </section>
+      {/* ===== Hero (no cropping, image controls height) ===== */}
+<section className="about__heroAuto full-bleed">
+  <picture>
+    {/* Mobile first source (<= 680px) */}
+    <source media="(max-width: 680px)" srcSet="/media/about/About-us-Mobile-Banner-af.webp" />
+    {/* Desktop/default fallback */}
+    <img
+      src="/media/about/About-us-Banner_af.webp"
+      alt="Dubai skyline with Asghar Furniture emblem"
+      className="about__heroImgAuto"
+      loading="eager"
+      decoding="async"
+    />
+  </picture>
+</section>
 
       {/* ===== Heading + Subheading ===== */}
       <section className="about__intro container">
@@ -53,7 +55,7 @@ export default function AboutPage() {
 
         <article className="mvvCard">
           <div className="mvvCard__icon">
-            <Image src="/media/about//icons/vision.webp" alt="" fill sizes="48px" />
+            <Image src="/media/about//icons/values.webp" alt="" fill sizes="48px" />
           </div>
           <h3>Values</h3>
           <p>
@@ -64,7 +66,7 @@ export default function AboutPage() {
 
         <article className="mvvCard">
           <div className="mvvCard__icon">
-            <Image src="/media/about/icons/values.webp" alt="" fill sizes="48px" />
+            <Image src="/media/about/icons/vision.webp" alt="" fill sizes="48px" />
           </div>
           <h3>Vision</h3>
           <p>
