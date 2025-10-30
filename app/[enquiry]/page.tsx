@@ -1,27 +1,27 @@
-// app/enquiry/[slug]/page.tsx
-import "../enquiry.css";
+// app/[enquiry]/page.tsx
+import "../enquiry/enquiry.css";               // same CSS
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ENQUIRY_PAGES } from "../enquiry.data";
+// import { ENQUIRY_PAGES } from "../enquiry.data"; // or "../enquiry/enquiry.data" if that’s where your file lives
+import { ENQUIRY_PAGES } from "@/app/enquiry/enquiry.data";
 
-type Params = { slug: string };
+type Params = { enquiry: string };
 
+// Pre-build only the pages you define in ENQUIRY_PAGES
 export function generateStaticParams() {
-  return Object.keys(ENQUIRY_PAGES).map((slug) => ({ slug }));
+  return Object.keys(ENQUIRY_PAGES).map((enquiry) => ({ enquiry }));
 }
 
+// Next.js (App Router) sometimes gives params as a Promise; unwrap safely
 export async function generateMetadata({
   params,
 }: {
   params: Promise<Params>;
 }) {
-  const { slug } = await params;
-  const page = ENQUIRY_PAGES[slug];
+  const { enquiry } = await params;
+  const page = ENQUIRY_PAGES[enquiry];
   if (!page) return {};
-  return {
-    title: page.seo.title,
-    description: page.seo.description,
-  };
+  return { title: page.seo.title, description: page.seo.description };
 }
 
 export default async function EnquiryPage({
@@ -29,8 +29,8 @@ export default async function EnquiryPage({
 }: {
   params: Promise<Params>;
 }) {
-  const { slug } = await params;
-  const page = ENQUIRY_PAGES[slug];
+  const { enquiry } = await params;
+  const page = ENQUIRY_PAGES[enquiry];
   if (!page) return notFound();
 
   return (
