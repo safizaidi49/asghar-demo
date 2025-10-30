@@ -1,0 +1,106 @@
+/* Root palette pulled from your spec */
+:root{
+  --pp-text:#0e0e0e;
+  --pp-muted:#3b3b3b;
+  --pp-border:#e4e4e4;
+  --pp-hero:#dddddd; /* rgb(221,221,221) */
+}
+
+/* Page font & base */
+.pp{
+  color:var(--pp-text);
+  font-family:Poppins, sans-serif;
+}
+
+/* ---------- HERO / BREADCRUMBS ---------- */
+.pp-hero{
+  background:var(--pp-hero);
+}
+.pp-hero-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:38px 16px;
+}
+.pp-hero h1{
+  font-size:55px;           /* desktop spec */
+  font-weight:500;          /* 500 weight */
+  line-height:1.1;
+  margin:0 0 12px;
+  color:#000;
+}
+.pp-bc{
+  display:flex; align-items:center; gap:8px;
+  list-style:none; margin:0; padding:0;
+  font-size:16px;            /* breadcrumbs size */
+  color:#000;
+}
+.pp-crumb a{
+  color:#000; text-decoration:none;
+}
+.pp-crumb-sep{opacity:.6; margin:0 6px;}
+.pp-crumb.current{opacity:.9}
+
+/* ---------- CONTENT WRAPPER ---------- */
+.pp-wrap{
+  max-width:1200px;
+  margin:28px auto 80px;
+  padding:0 16px;
+}
+
+/* Body text rules (outside & inside the box) */
+.pp-body{
+  font-size:14px;
+  font-weight:300;
+  color:var(--pp-text);
+  text-align:justify;
+}
+.pp-body p{margin:0 0 14px;}
+.pp-body ul{margin:0 0 14px 18px;}
+.pp-body li{margin:6px 0;}
+.pp-body a{color:#0b1260; text-decoration:underline;}
+
+/* ---------- INTRO (outside the box) ---------- */
+.pp-intro{margin-bottom:22px;}
+
+/* ---------- BOX WITH FULL BORDER ---------- */
+.pp-box{
+  border:1px solid var(--pp-border);
+  border-radius:8px;
+  padding:22px;
+  background:#fff;
+}
+.pp-block + .pp-block{margin-top:18px;}
+.pp-block h2{
+  font-size:17px;           /* heading size spec */
+  font-weight:700;          /* bold */
+  line-height:1.4;
+  margin:0 0 10px;
+  color:#000;
+}
+.pp-divider{
+  height:1px;
+  border:0;
+  background:var(--pp-border);
+  margin:18px 0;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:1024px){
+  .pp-hero h1{font-size:42px;}
+}
+@media (max-width:680px){
+  .pp-hero-inner{padding:26px 14px;}
+  .pp-hero h1{font-size:32px;}
+  .pp-bc{font-size:14px;}
+  .pp-box{padding:18px;}
+}
+.pp-body ul {
+  list-style: disc;
+  margin: 0 0 14px 20px;
+  padding-left: 8px;
+}
+
+.pp-body li {
+  margin: 6px 0;
+  line-height: 1.6;
+}

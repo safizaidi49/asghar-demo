@@ -1,117 +1,291 @@
 /* ============== WRAPPER ============== */
-.wrap{
-  width:100%;
-  background:#fff;
-  border-bottom:1px solid #eee;
-  position:sticky; top:0;
-  z-index:1000; /* above page content */
-  font-family:var(--font-poppins, Poppins, sans-serif);
-  color:#111;
+.wrap {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* above page content */
+  font-family: var(--font-poppins, Poppins, sans-serif);
+  color: #111;
 }
 
 /* ============== MOBILE TOP BAR ============== */
-.mTop{
-  display:grid;
-  grid-template-columns:25% 50% 25%;
-  align-items:center;
-  height:60px;                 /* fixed height row */
-  padding:8px 0 ;
-  background:#fff;
-  z-index:2;
+.mTop {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  align-items: center;
+  height: 60px;
+  /* fixed height row */
+  padding: 8px 0;
+  background: #fff;
+  z-index: 2;
   margin-bottom: 10px;
 }
 
 /* Hamburger (left 25%) */
-.burger{
-  -webkit-appearance:none; appearance:none;
-  background:none; border:0; cursor:pointer;
-  width:44px;display:grid; place-items:center;
+.burger {
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  width: 44px;
+  display: grid;
+  place-items: center;
 }
-.burger span{
-  display:block; width:22px; height:2px; background:#111; border-radius:2px;
+
+.burger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #111;
+  border-radius: 2px;
 }
-.burger span + span{ margin-top:5px; }
+
+.burger span+span {
+  margin-top: 5px;
+}
 
 /* Logo (center 50%) */
-.logoLink{
-  justify-self:center;
-  display:flex; align-items:center; justify-content:center;
-  height:100%; line-height:0;   /* remove img baseline gap */
+.logoLink {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  line-height: 0;
+  /* remove img baseline gap */
 }
+
 /* contain the SVG/IMG so it never overlaps tabs */
 .logoLink img,
-.logoLink svg{
-  display:block;
-  height:50px;                  /* tweak if you want smaller/bigger */
-  max-width:160px;
-  width:auto;
+.logoLink svg {
+  display: block;
+  height: 50px;
+  /* tweak if you want smaller/bigger */
+  max-width: 160px;
+  width: auto;
 }
 
 /* Right icons (right 25%) */
-.mIcons{
-  display:flex; align-items:center; justify-self:end; justify-content:flex-end;
-  gap:2px; height:60px; position:relative;
+.mIcons {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  justify-content: flex-end;
+  gap: 2px;
+  height: 60px;
+  position: relative;
 }
-.iconBtn{
-  position:relative; width:30px; height:30px;
-  display:grid; place-items:center; background:transparent; border:0; cursor:pointer;
+
+.iconBtn {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
 }
-.iconBtn svg{ width:22px; height:22px; stroke:#111; fill:none; stroke-width:1.8; }
-.iconBtn svg path, .iconBtn svg circle{ stroke-linecap:round; stroke-linejoin:round; }
+
+.iconBtn svg {
+  width: 22px;
+  height: 22px;
+  stroke: #111;
+  fill: none;
+  stroke-width: 1.8;
+}
+
+.iconBtn svg path,
+.iconBtn svg circle {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 /* Cart badge */
-.badge{
-  position:absolute; top:2px; right:2px;
-  min-width:18px; height:18px; line-height:18px; padding:0 5px;
-  border-radius:10px; background:#FFC83D; color:#000;
-  font-size:11px; font-weight:700; box-shadow:0 1px 0 rgba(0,0,0,.05);
+.badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 18px;
+  height: 18px;
+  line-height: 18px;
+  padding: 0 5px;
+  border-radius: 10px;
+  background: #FFC83D;
+  color: #000;
+  font-size: 11px;
+  font-weight: 700;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
 }
 
 /* ============== MOBILE TABS ============== */
-.mTabs{ border-top:1px solid #eee; border-bottom:1px solid #eee; background:#fff; z-index:1; }
-.mTabsList{
-  display:flex; gap:24px; overflow-x:auto; padding:8px;
-  scroll-snap-type:x mandatory; justify-content:center;
+.mTabs {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  z-index: 1;
 }
-.mTabsList::-webkit-scrollbar{ display:none; }
-.mTab{
-  white-space:nowrap; color:#222; text-decoration:none;
-  font-size:11px; font-weight:500; scroll-snap-align:start;
+
+.mTabsList {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 8px;
+  scroll-snap-type: x mandatory;
+  justify-content: center;
+}
+
+.mTabsList::-webkit-scrollbar {
+  display: none;
+}
+
+.mTab {
+  white-space: nowrap;
+  color: #222;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 500;
+  scroll-snap-align: start;
 }
 
 /* ============== DESKTOP ============== */
-.dRow{ display:none; align-items:center; gap:28px; padding:16px 22px; }
-.dLogo{ display:inline-flex; }
-
-.dNav{ flex:1 1 auto; }
-.dNav ul{ display:flex; gap:28px; align-items:center; }
-.dNav a{
-  text-decoration:none; color:#111; font-weight:500; font-size:14px;
-  display:inline-flex; align-items:center; gap:6px;
+.dRow {
+  display: none;
+  align-items: center;
+  gap: 28px;
+  padding: 16px 22px;
 }
-.chev{ width:16px; height:16px; fill:none; stroke:#111; stroke-width:1.8; }
 
-.dSearch{
-  display:flex; align-items:center; gap:8px;
-  background:#fff; border:1px solid #e7e7e7; border-radius:6px;
-  padding:8px 10px;
+.dLogo {
+  display: inline-flex;
 }
-.dSearch input{ border:none; outline:none; width:100%; font-size:14px; color:#222; }
-.dSearch button{ border:none; background:transparent; padding:0; cursor:pointer; }
-.dSearch svg{ width:20px; height:20px; stroke:#111; fill:none; stroke-width:1.8; }
 
-.dActions{ display:flex; align-items:center; gap:18px; }
-.account{
-  display:inline-flex; align-items:center; gap:8px;
-  text-decoration:none; color:#111; font-weight:500;
+.dNav {
+  flex: 1 1 auto;
 }
-.account svg{ width:22px; height:22px; stroke:#111; fill:none; stroke-width:1.6; }
-.dIcon{ position:relative; display:inline-grid; place-items:center; width:28px; height:28px; }
-.dIcon svg{ width:22px; height:22px; stroke:#111; fill:none; stroke-width:1.8; }
+
+.dNav ul {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.dNav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chev {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #111;
+  stroke-width: 1.8;
+}
+
+.dSearch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+.dSearch input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  color: #222;
+}
+
+.dSearch button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.dSearch svg {
+  width: 20px;
+  height: 20px;
+  stroke: #111;
+  fill: none;
+  stroke-width: 1.8;
+}
+
+.dActions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.account {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+.account svg {
+  width: 22px;
+  height: 22px;
+  stroke: #111;
+  fill: none;
+  stroke-width: 1.6;
+}
+
+.dIcon {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+}
+
+.dIcon svg {
+  width: 22px;
+  height: 22px;
+  stroke: #111;
+  fill: none;
+  stroke-width: 1.8;
+}
 
 /* Desktop breakpoint: show desktop row, hide mobile bars */
-@media (min-width:1024px){
-  .mTop, .mTabs{ display:none; }
-  .dRow{ display:grid; grid-template-columns:auto 1fr auto auto; }
-  .wrap{ border-bottom:1px solid #efefef; }
+@media (min-width:1024px) {
+
+  .mTop,
+  .mTabs {
+    display: none;
+  }
+
+  .dRow {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+  }
+
+  .wrap {
+    border-bottom: 1px solid #efefef;
+  }
+}
+
+@media (max-width:380px) {
+
+  .mTabsList {
+  gap: 10px;
+  
+}
 }

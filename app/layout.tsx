@@ -7,6 +7,8 @@ import "slick-carousel/slick/slick-theme.css";
 
 import Header from "./components/Header"; // ← add the shared header
 import TopBar from "./components/TopBar";
+import Footer from "./components/Footer";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 
 const poppins = Poppins({
@@ -32,6 +34,7 @@ export default function RootLayout({
          <TopBar />
         <Header />
         {children}
+        
       </body>
     </html>
   );

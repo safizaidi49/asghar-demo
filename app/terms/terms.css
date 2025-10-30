@@ -1,0 +1,253 @@
+/* ===== Base ===== */
+.tnt {
+    color: #0e0e0e;
+    font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, sans-serif
+}
+
+/* ===== HERO ===== */
+.tnt-hero {
+    background: #ddd
+}
+
+.tnt-hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 36px 16px
+}
+
+.tnt-hero h1 {
+    font-size: 55px;
+    font-weight: 500;
+    margin: 0 0 12px
+}
+
+.tnt-bc {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    font-size: 16px
+}
+
+.tnt-bc li {
+    color: #111
+}
+
+.tnt-bc li a {
+    color: #111;
+    text-decoration: none
+}
+
+.tnt-bc li+li::before {
+    content: "›";
+    margin: 0 6px 0 2px;
+    color: #333
+}
+
+/* ===== Intro ===== */
+.tnt-intro {
+    max-width: 1200px;
+    margin: 26px auto 12px;
+    padding: 0 16px
+}
+
+.tnt-intro p {
+    font-size: 14px;
+    font-weight: 300;
+    text-align: justify
+}
+
+/* ===== Tabs wrapper ===== */
+.tnt-tabs {
+    max-width: 1200px;
+    margin: 10px auto 60px;
+    padding: 0 16px
+}
+
+/* Desktop tab row — locked to 1 line; scroll if overflow */
+.tnt-tabrow {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    align-items: flex-end;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+
+/* Tab button */
+.tnt-tab {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border: 1.5px solid #d9d9d9;
+    border-radius: 6px 6px 0 0;
+    background: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    line-height: 1.15;
+    font-size: 14px;
+    white-space: normal;
+    /* allow 2-line labels */
+    transition: color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.tnt-tab .tnt-ico {
+    font-size: 16px;
+    color: #111;
+    transition: color .2s ease
+}
+
+.tnt-tab.is-active {
+    border-bottom-color: #fff;
+    box-shadow: 0 -2px 0 #ffc107 inset;
+    /* subtle notch accent */
+    color: #F7BE2F;
+}
+
+.tnt-tab.is-active .tnt-ico {
+    color: #F7BE2F
+}
+
+.tnt-tab:hover,
+.tnt-tab:focus-visible {
+    color: #F7BE2F
+}
+
+.tnt-tab:hover .tnt-ico,
+.tnt-tab:focus-visible .tnt-ico {
+    color: #F7BE2F
+}
+
+/* Desktop panel */
+.tnt-panel {
+    border: 1.5px solid #d9d9d9;
+    border-radius: 0 8px 8px 8px;
+    padding: 26px;
+    margin-top: -1px;
+}
+
+/* ===== Content rhythm ===== */
+.tnt-copy h3 {
+    font-size: 22px;
+    margin: 0 0 10px
+}
+
+.tnt-copy h4 {
+    font-size: 18px;
+    margin: 20px 0 8px
+}
+
+.tnt-copy p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.8;
+    text-align: justify
+}
+
+.tnt-list {
+    counter-reset: item;
+    padding-left: 18px
+}
+
+.tnt-list>li {
+    margin: 8px 0;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.8
+}
+
+.tnt-bullets {
+    padding-left: 18px
+}
+
+.tnt-bullets li {
+    list-style: disc;
+    margin: 6px 0;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.8
+}
+
+.tnt-note {
+    font-size: 13px;
+    background: #fff8d6;
+    border: 1px solid #ffe08a;
+    padding: 10px 12px;
+    border-radius: 6px
+}
+
+/* ===== Mobile accordion ===== */
+.tnt-acc {
+    display: none
+}
+
+.tnt-acc-item {
+    margin-bottom: 10px
+}
+
+.tnt-acc-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border: 1.5px solid #d9d9d9;
+    padding: 12px 14px;
+    font-weight: 600;
+    text-align: left;
+    transition: color .2s ease, box-shadow .2s ease;
+}
+
+.tnt-acc-btn .tnt-ico {
+    font-size: 16px;
+    color: #111;
+    transition: color .2s ease
+}
+
+.tnt-acc-btn.is-open {
+    box-shadow: 0 -2px 0 #ffc107 inset;
+    color: #F7BE2F
+}
+
+.tnt-acc-btn.is-open .tnt-ico {
+    color: #F7BE2F
+}
+
+.tnt-acc-panel {
+    border: 1.5px solid #d9d9d9;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 16px;
+    margin-top: -6px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width:1080px) {
+    .tnt-hero h1 {
+        font-size: 40px
+    }
+}
+
+@media (max-width:768px) {
+    .tnt-hero h1 {
+        font-size: 32px
+    }
+
+    .tnt-tabrow,
+    .tnt-panel {
+        display: none
+    }
+
+    /* hide desktop tabs on mobile */
+    .tnt-acc {
+        display: block
+    }
+
+    .tnt-tabs {
+        margin-bottom: 30px
+    }
+}
