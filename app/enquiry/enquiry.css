@@ -1,0 +1,384 @@
+/* app/enquiry/enquiry.css */
+
+:root {
+    --enq-heading: #616161;
+    --enq-text: #7A7A7A;
+    --enq-muted: #7A7A7A;
+    --enq-brand: #0b1260;
+    /* deep navy */
+    --enq-accent: #ffc107;
+    /* warm yellow */
+    --enq-border: #e7e7e7;
+    --pad-wide: 50px;
+}
+
+.enq-fullbleed {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.enq-hero picture,
+.enq-hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* NO CROPPING */
+}
+
+/* Top intro under hero */
+.enq-intro {
+    padding: 30px 100px;
+    text-align: center;
+}
+
+.enq-intro h1 {
+    color: var(--enq-heading);
+    font-weight: 400;
+    font-size: 44px;
+    letter-spacing: .2px;
+    margin: 10px 0 12px;
+}
+
+.enq-intro p {
+    color: var(--enq-muted);
+    font-size: clamp(15px, 1.9vw, 20px);
+    /* max-width: 1100px; */
+    margin: 0 auto;
+}
+
+/* Buttons */
+.enq-ctaRow {
+    margin-top: 16px;
+    gap: 12px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.enq-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    width: auto;
+}
+
+@media (max-width: 680px) {
+    .enq-btn {
+        font-size: 12px;
+    }
+
+}
+
+.enq-btn--primary {
+    background: var(--enq-accent);
+    color: #222;
+}
+
+.enq-btn--outline {
+    background: #0b1353;
+    color: #fff;
+}
+
+/* USPs */
+.enq-usps {
+    padding: 24px var(--pad-wide) 8px;
+}
+
+.enq-uspsGrid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.enq-usp {
+    text-align: center;
+    padding: 28px 18px;
+    border-right: 1px solid var(--enq-border);
+}
+
+.enq-usp:last-child {
+    border-right: 0;
+}
+
+.enq-usp__icon {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    margin: 0 auto 10px;
+}
+
+.enq-usp h3 {
+    margin: 33px 0 22px;
+    color: #3d3d3d;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: .02em;
+}
+
+.enq-usp p {
+    color: var(--enq-text);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+@media (max-width: 680px) {
+    .enq-usp h3 {
+        font-size: 15px;
+    }
+
+    .enq-usp p {
+        font-size: 12px;
+    }
+
+}
+
+/* Side by side sections */
+.enq-split {
+    padding: 0px;
+    display: grid;
+    gap: 0px;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    background-color: #EBEBEB;
+}
+
+.enq-split img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.enq-copy h2 {
+    text-align: center;
+    color: var(--enq-heading);
+    font-size: clamp(24px, 3.6vw, 44px);
+    margin: 0 0 10px;
+    padding: 0px 20px;
+}
+
+.enq-copy p {
+    text-align: center;
+    color: var(--enq-text);
+    font-size: clamp(14px, 2vw, 18px);
+    line-height: 1.8;
+    padding: 0px 20px;
+}
+
+.enq-copy .enq-ctaRow {
+    justify-content: center;
+}
+
+/* Portfolio */
+.enq-portfolio {
+    padding: 34px 8px;
+    text-align: center;
+}
+
+.enq-portfolio h2 {
+    color: var(--enq-heading);
+    font-size: clamp(24px, 3.2vw, 40px);
+    margin-bottom: 6px;
+}
+
+.enq-portfolio p {
+    color: var(--enq-muted);
+    margin: 0 auto 18px;
+    max-width: 900px;
+}
+
+.enq-portfolioGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.enq-pcol {
+    display: grid;
+    gap: 8px;
+}
+
+.enq-pimg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.enq-pimg--small {
+    object-fit: cover;
+}
+
+.enq-pimg--big {
+    object-fit: cover;
+}
+
+/* FAQ (details/summary for reliability) */
+.enq-faq {
+    padding: 26px var(--pad-wide) 70px;
+}
+
+.enq-faq h2 {
+    text-align: center;
+    color: var(--enq-heading);
+    font-size: clamp(24px, 3.2vw, 40px);
+    margin-bottom: 12px;
+}
+
+.enq-qa {
+    border: 1px solid var(--enq-border);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    background: #f9f9f9;
+}
+
+.enq-qa summary {
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+    padding: 18px 56px 18px 18px;
+    font-weight: 500;
+    color: #616161;
+}
+
+.enq-qa[open] summary {
+    background: #efefef;
+}
+
+.enq-qa summary::after {
+    content: "+";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 700;
+    font-size: 20px;
+    color: #666;
+}
+
+.enq-qa[open] summary::after {
+    content: "×";
+}
+
+.enq-qa .enq-a {
+    font-size: 14px;
+    padding: 16px 18px;
+    color: var(--enq-text);
+    line-height: 1.8;
+    background: #fff;
+}
+
+/* Responsive */
+@media (max-width: 1080px) {
+    .enq-uspsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .enq-usp {
+        border-right: 0;
+        border-bottom: 1px solid var(--enq-border);
+    }
+
+    .enq-split {
+        grid-template-columns: 1fr;
+    }
+
+    .enq-copy .enq-ctaRow {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 680px) {
+
+    .enq-intro,
+    .enq-usps,
+    .enq-faq {
+        padding: 18px 10px;
+    }
+
+    .enq-portfolioGrid {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    /* Flatten columns so we can order smalls before bigs */
+    .enq-pcol {
+        display: contents;
+    }
+
+    .enq-pimg--small {
+        order: 1;
+    }
+
+    .enq-pimg--big {
+        order: 2;
+    }
+
+    .enq-split {
+        padding: 0px;
+        grid-template-columns: 1fr !important;
+
+    }
+
+    .enq-portfolio {
+        padding: 18px 0px;
+    }
+
+    .enq-copy {
+        padding: 5%;
+    }
+
+    .enq-intro h1 {
+
+        font-size: 24px;
+    }
+
+    .enq-portfolio h2 {
+        padding: 0px 20px;
+    }
+
+    .enq-portfolio p {
+        padding: 0px 20px;
+    }
+
+}
+
+@media (max-width: 1080px) {
+    .enq-usp {
+        border: 1px solid var(--enq-border);
+    }
+
+    .enq-usp:nth-child(3),
+    .enq-usp:nth-child(4) {
+        border: 1px solid var(--enq-border);
+    }
+
+    .enq-uspsGrid {
+        gap: 10px;
+
+    }
+}
+@media (min-width: 1081px) {
+  .enq-usps { 
+    position: relative;
+    padding-top: 36px;   /* extra top space after the rule */
+    padding-bottom: 36px;/* extra breathing room before next section */
+  }
+
+  .enq-usps::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;                       /* sits on top edge of the section */
+    width: 100vw;                 /* full-bleed line */
+    height: 1px;
+    background: #E3E3E3;          /* divider color */
+  }
+}
