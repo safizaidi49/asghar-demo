@@ -243,7 +243,7 @@ export default function AboutPage() {
     {/* LEFT (tall) */}
     <div className="awardCard awardCard--tall">
       <Image
-        src="/media/about/awards/awards1.webp"
+        src="/media/about/awards/Awards1.webp"
         alt="Arabian Best of Best — winner artwork"
         fill
         sizes="(max-width: 1024px) 100vw, 33vw"
@@ -254,7 +254,7 @@ export default function AboutPage() {
     {/* MIDDLE top */}
     <div className="awardCard">
       <Image
-        src="/media/about/awards/awards2.webp"
+        src="/media/about/awards/Awards2.webp"
         alt="Awards certificate"
         fill
         sizes="(max-width: 1024px) 100vw, 33vw"
@@ -265,7 +265,7 @@ export default function AboutPage() {
     {/* RIGHT (tall) */}
     <div className="awardCard awardCard--tall">
       <Image
-        src="/media/about/awards/awards4.webp"
+        src="/media/about/awards/Awards4.webp"
         alt="Awards medal"
         fill
         sizes="(max-width: 1024px) 100vw, 33vw"
@@ -276,7 +276,7 @@ export default function AboutPage() {
     {/* MIDDLE bottom */}
     <div className="awardCard">
       <Image
-        src="/media/about/awards/awards3.webp"
+        src="/media/about/awards/Awards3.webp"
         alt="Awards trophy"
         fill
         sizes="(max-width: 1024px) 100vw, 33vw"
