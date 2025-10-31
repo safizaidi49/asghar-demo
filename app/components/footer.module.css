@@ -144,3 +144,6 @@
 
   .policies { justify-content: center; }
 }
+.af-footer {
+  margin-top: clamp(16px, 3vw, 40px);  /* ~16–40px depending on screen */
+}

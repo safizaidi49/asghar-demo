@@ -1,0 +1,108 @@
+/* container */
+.wrap { background:#fff; color:#151515; width:100%; }
+
+/* ========== Section 1 (Partners) ========== */
+.partnerBar {
+  background:#F6F6F6;
+  border-bottom:1px solid #e6e6e6;
+  padding:10px 14px 12px;
+}
+.partnerTitle { font-size:10px; font-weight:600; letter-spacing:.3px; margin:0 0 6px; }
+.partnerRow { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.partnerLeft { display:flex; align-items:center; gap:12px; }
+.partnerLeft img { height:auto; object-fit:contain; }
+.partnerRight { display:flex; align-items:center; }
+.partnerRight img { height:50px; width:200px; object-fit:contain; }
+
+/* ========== Section 2 (Brand + two menus) ========== */
+/* three equal columns */
+.topGrid{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;  /* equal widths */
+  column-gap:10px;
+  padding:20px 0px;
+}
+
+/* no vertical separator between columns; center brand */
+/* .brandCol{
+  border-right:none;       
+  padding-right:0;         
+  display:flex;
+  flex-direction:column;
+  align-items:center;      
+} */
+.brandCol{
+  --brandW: 110px;                 /* <- change this if you want wider/narrower */
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+/* keep brand images tidy inside equal column */
+/* .brandCol img{
+  max-width:110px;         
+  width:100%;
+  height:auto;
+} */
+.brandCol img{
+  width: var(--brandW) !important;
+  height:auto;
+}
+/* .brandDivider{ height:10px; border-top:1px solid #e8e8e8; margin:10px 0; } */
+
+.brandDivider{
+  width: var(--brandW);
+  border-top: 1px solid #e8e8e8;
+  margin: 30px 0;
+}
+.badges{ display:flex; flex-direction:column; gap:6px; }
+
+.menuCol{}
+.head{ font-size:12px; font-weight:700; margin:0 0 8px; }
+.menu{ list-style:none; padding:0; margin:0; }
+.menu li{ margin:0px 0px 2px 0px; }
+.menu a{ font-size:10px; color:inherit; text-decoration:none; }
+.menu a:hover{ text-decoration:underline; }
+
+/* separator between section 2 and 3 */
+.hr{ border-top:1px solid #e8e8e8; margin:6px 0 0; }
+
+/* ========== Section 3 (Contact + Branches) ========== */
+.midGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  column-gap:16px;
+  padding:14px;
+  border-top:1px solid #e8e8e8;   /* continuous line under section 2 */
+}
+
+.cta{
+  display:flex; align-items:center; gap:8px;
+  border-radius:6px; padding:10px 12px; margin:8px 0 10px;
+  height:38px;                         /* equal height for both boxes */
+}
+.ctaText{ font-size:10px; white-space:nowrap; }
+.phone{ background:#FBBC3C; color:#111; }
+.email{ background:#DCDCDC; color:#111; }
+
+.branches{ list-style:none; margin:0; padding:0; }
+.branchItem{ display:flex; align-items:center; gap:2px; margin:10px 0; }
+.branchItem span{ font-size:10px; }
+
+/* ========== Section 4 (Bottom stack) ========== */
+.bottomStack{ padding:10px 14px 16px; text-align:center; }
+.socials{ display:flex; gap:12px; justify-content:center; align-items:center; margin:8px 0 10px; }
+.policies{ display:flex; gap:8px; justify-content:center; font-size:10px; margin:6px 0 8px; }
+.sep{ opacity:.5; }
+.payments{ display:flex; justify-content:center; margin:6px 0 8px; }
+.copy{ font-size:10px; color:#555; margin:6px 0 0; }
+.loc{
+    width:12px;
+    height: 12px;;
+}
+/* never show this on ≥769px */
+@media (min-width: 1001px) {
+  .wrap { display: none; }
+}
+.wrap {
+  margin-top: clamp(12px, 3vw, 28px);
+}

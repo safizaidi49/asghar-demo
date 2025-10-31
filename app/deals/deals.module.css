@@ -1,0 +1,166 @@
+/* ---------- helpers: desktop/mobile swap ---------- */
+.deskOnly { display: block; }
+.mobiOnly { display: none; }
+
+/* ---------- page frame ---------- */
+.page { display: block; }
+
+/* ---------- generic section (NOT banners) ---------- */
+.section {
+  margin: 30px 0;           /* desktop vertical rhythm */
+  padding: 0 50px;          /* desktop 50px L/R */
+}
+
+/* ---------- banners ---------- */
+.banner {
+  margin: 30px 0;           /* desktop spacing */
+  padding: 0 50px;          /* desktop side padding for banners */
+}
+.herobanner {               /* hero stays full bleed */
+  margin: 0;
+  padding: 0;
+}
+.bannerImg,
+.herobannerImg {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 5;     /* desktop panoramic */
+  background: #fff;         /* shows if we letterbox with contain */
+}
+
+/* ---------- header row (title + link) ---------- */
+.blockHead {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.blockHead h2 {
+  font-size: clamp(22px, 2.2vw, 34px);
+  font-weight: 700;
+  margin: 0;
+}
+.linkMore { font-size: 15px; color: #d39b2f; text-decoration: none; }
+.linkMore:hover { text-decoration: underline; }
+
+/* ---------- promo yellow grid ---------- */
+.promoGrid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(160px, 1fr));
+  gap: clamp(14px, 2vw, 24px);
+}
+.tile { position: relative; display: block; margin: 0; }
+.tileImgWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.tileCaption {
+  /* default style (used by essentials tiles) */
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  background: #020202C7;
+}
+/* Hide captions ONLY for the top promo squares */
+.promoGrid .tileCaption { display: none !important; }
+
+/* ---------- essentials blocks ---------- */
+.blockTitle {
+  font-size: clamp(22px, 2.2vw, 36px);
+  font-weight: 700;
+  margin: 0 0 16px;
+  text-align: center;
+}
+.essentials { display: grid; gap: clamp(16px, 2vw, 24px); }
+/* bedroom: hero LEFT, grid RIGHT (desktop) */
+.essentialsBedroom { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+/* living: grid LEFT, hero RIGHT (desktop) */
+.essentialsLiving { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); }
+
+.hero { position: relative; margin: 0; }
+.heroImg {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.heroCaption {
+    text-align: center;
+  position: absolute; left: 34%; top: 8%;
+  font-size: clamp(20px, 3vw, 44px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: .02em;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,.45);
+}
+
+.tilesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 18px);
+}
+
+/* ---------- remove inner padding from FeaturedProducts ---------- */
+.featureSection { padding: 0 !important; }
+.noPadFP :global([class*="featureSection"]) { padding: 0 !important; }
+
+/* ---------- tablet tweaks ---------- */
+@media (max-width: 1200px) {
+  .promoGrid { grid-template-columns: repeat(6, minmax(160px, 1fr)); }
+}
+@media (max-width: 1024px) {
+  .essentialsBedroom, .essentialsLiving { grid-template-columns: 1fr; }
+  .heroCaption { font-size: clamp(22px, 4vw, 36px); }
+}
+
+/* =========================================================
+   MOBILE LAYOUT  (≤ 1000px)
+   ========================================================= */
+@media (max-width: 1000px) {
+  /* desktop/mobile image toggles */
+  .deskOnly { display: none; }
+  .mobiOnly { display: block; }
+
+  /* spacing & side padding */
+  .section    { margin: 10px 0; padding: 0 10px; }
+  .banner     { margin: 10px 0; padding: 0 10px; }
+  .herobanner { margin: 0 0 10px 0; padding: 0; }
+
+  /* keep height for Next <Image fill>; use taller ratio on mobile */
+  .herobannerImg {
+    aspect-ratio: 16 / 9;
+    min-height: 220px;   
+  }
+
+  /* promo grid: 2 cols */
+  .promoGrid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+  /* essentials tiles */
+  .tilesGrid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .blockTitle { font-size: 18px; }
+   /* FeaturedProducts / slick / card wrappers often add space — zero them */
+  .noPadFP :global([class*="featureSection"]){ padding:0 !important; margin:0 !important; }
+  .noPadFP :global(.slick-slider),
+  .noPadFP :global(.slick-list),
+  .noPadFP :global(.slick-track){ margin:0 !important; padding:0 !important; }
+
+  /* ensure the banner box itself can’t create phantom space */
+  .bannerImg{ display:block; line-height:0; }
+
+/* kill inner margins some widgets add at the bottom */
+  .section > *:last-child,
+  .banner  > *:last-child{ margin-bottom:0 !important; }
+    /* if any headings inside sections have top/bottom margins, collapse them */
+  .section h1, .section h2, .section h3,
+  .banner  h1, .banner  h2, .banner  h3{ margin-top:0; margin-bottom:10px; }
+
+
+}
