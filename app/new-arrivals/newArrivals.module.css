@@ -1,0 +1,200 @@
+/* ---------- helpers ---------- */
+.page { display: block; }
+.deskOnly { display: block; }
+.mobiOnly { display: none; }
+
+/* ---------- rhythm ---------- */
+.section { margin: 30px 0; padding: 0 50px; }
+.banner  { margin: 30px 0; padding: 0 50px; }
+.herobanner { margin: 0; padding: 0; }
+
+/* ---------- banners ---------- */
+.bannerImg,
+.herobannerImg {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 5;
+}
+
+/* ---------- overlay (hard-centered) ---------- */
+.centerOverlay{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 92%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+}
+.centerTitle{
+  font-size: clamp(22px, 3.4vw, 44px);
+  font-weight: 300;
+  letter-spacing: 0.4px;
+  color: #fff;
+  text-shadow: 0 2px 18px rgba(0,0,0,.55);
+  line-height: 52px;
+}
+.centerLink{
+  margin-top: 4px;
+  font-size: clamp(13px, 1.2vw, 25px);
+  color: #FCBC3D;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 5.5px;
+  line-height: 50px;
+}
+
+/* =========================================================
+   2-column mosaic with a hero background on one side
+   and a 2×2 true-square grid on the other.
+   ========================================================= */
+.duo{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: stretch;
+}
+
+/* Reverse order when hero is on the right (desktop only) */
+.duoReverse { grid-template-columns: 1fr 1fr; }
+
+/* The big background hero tile (desktop) */
+.heroTile{
+  position: relative;
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Mobile hero image (real img for proper mobile crop) */
+.heroImgMobile{
+  display: none;               /* hidden on desktop */
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+/* 2×2 square grid */
+.quad{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/* Square tiles (true squares) */
+.sqTile { margin: 0; }
+.sqImgWrap{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+/* Cabinet split (image + text column with #E7BB93) */
+.cabinetSplit{
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: stretch;
+}
+.cabImgWrap{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+.cabinetText{
+  background: #E7BB93;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  padding: 24px;
+}
+.cabinetText .centerLink{
+  margin-top: 0;
+  color: black;
+}
+.cabinetText h3{
+  font-size: clamp(22px, 2.6vw, 40px);
+  line-height: 1.08;
+  margin: 0;
+  color: #111;
+  letter-spacing: .02em;
+}
+
+/* Remove any inner padding from FeaturedProducts */
+.noPadFP :global([class*="featureSection"]) { padding: 0 !important; }
+
+/* ---------- tablet tweaks ---------- */
+@media (max-width: 1200px){
+  .bannerImg,
+  .herobannerImg { aspect-ratio: 16 / 6; }
+}
+
+/* ---------- mobile (≤ 1000px) ---------- */
+@media (max-width: 1000px){
+  .deskOnly { display: none; }
+  .mobiOnly { display: block; }
+
+  .section { margin: 10px 0; padding: 0 10px; }
+  .banner  { margin: 10px 0; padding: 0 10px; }
+  .herobannerImg,
+  .bannerImg { aspect-ratio: 16 / 9; }
+
+  /* stack */
+  .duo,
+  .duoReverse{
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* For hero-right sections, show hero FIRST on mobile */
+  .duoReverse > .quad { order: 2; }
+  .duoReverse > .heroTile { order: 1; }
+
+  /* Use real image on mobile instead of background */
+  .heroTile{ background-image: none !important; }
+  .heroImgMobile{ display: block; }
+
+  .quad { gap: 10px; }
+  .cabinetSplit { grid-template-columns: 1fr; }
+  .cabinetText { padding: 28px 18px; }
+
+  .centerOverlay{ width: 94%; gap: 6px; }
+  .centerTitle { font-size: clamp(20px, 6vw, 32px); }
+  .centerLink  { font-size: 12px; letter-spacing: .16em;text-align: center; }
+}
+
+/* Right-aligned banner overlay (Premium Beds) */
+.rightCenter{
+  left: auto !important;
+  right: clamp(24px, 8vw, 140px);
+  top: 50%;
+  transform: translateY(-50%) !important;
+  width: auto;
+  display: grid;
+  justify-items: end;
+  text-align: right;
+}
+.centerBlock{ max-width: 520px; }
+
+/* Keep it right-aligned on mobile (smaller gutter) */
+@media (max-width: 1000px){
+  .rightCenter{
+    right: clamp(16px, 7vw, 56px);
+    left: auto !important;
+    transform: translateY(-50%) !important;
+    justify-items: end;
+    text-align: right;
+    padding-right: 0;
+  }
+}
