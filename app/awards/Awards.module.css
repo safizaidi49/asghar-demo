@@ -1,0 +1,133 @@
+/* Page variables */
+.wrap {
+  --padX: 100px;      /* L/R padding for all sections except hero */
+  --gapGrid: 32px;    /* gap between cards */
+  --gapSection: 20px; /* vertical spacing between sections */
+  --radius: 12px;
+  --border: #e9ecef;
+  --shadow: 0 4px 20px rgba(0,0,0,.06);
+}
+
+/* HERO (no side padding) */
+.hero { padding-inline: 0; }
+.heroImg {
+  position: relative; width: 100%;
+  height: clamp(220px, 26vw, 420px);
+  overflow: hidden;
+}
+.heroImg > span, .heroImg img { object-fit: cover; }
+
+/* Generic sections */
+.section { padding-inline: var(--padX); margin-block: var(--gapSection); }
+
+/* Typography (section headings) */
+.h2 {
+  text-align: center; font-size: clamp(28px, 3vw, 40px);
+  margin: 0 0 12px;
+}
+.lead {
+  max-width: 960px; margin: 0 auto; text-align: center;
+  color: #6b7280; line-height: 1.7;
+}
+.h3 { font-size: clamp(24px, 2.2vw, 34px); margin: 0 0 28px; }
+
+/* Divider */
+.divider {
+  border: 0; height: 1px; background: #dfe3e6; opacity: .9;
+  margin: 40px var(--padX); border-radius: 999px;
+}
+
+/* Grid system */
+.grid { display: grid; gap: var(--gapGrid); }
+.grid2 { grid-template-columns: repeat(2, minmax(0,1fr)); margin: 0 20%; }
+.grid4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+
+/* Card using <details>/<summary> */
+.card details{
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  overflow:hidden;
+  background:#fff;
+  box-shadow: var(--shadow);
+  transition: box-shadow .2s, transform .2s;
+}
+.card details:hover{ transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.08); }
+
+/* Uniform media box (keeps images smaller & consistent) */
+.figure{
+  position: relative; width: 100%;
+  /* height: clamp(160px, 24vw, 240px); */
+  background: #f5f5f5;
+  border-radius: 10px;
+  display: grid; place-items: center;
+  padding: clamp(8px, 1.2vw, 16px);
+  overflow: hidden;
+}
+.figure img{
+  max-width:100%; max-height:100%;
+  width:auto; height:auto; object-fit: contain; display:block;
+}
+
+/* Make summary clickable & add yellow corner + */
+.card summary{
+  list-style:none; padding:0; margin:0; cursor:pointer; position:relative;
+}
+.card summary::-webkit-details-marker{ display:none; }
+.card summary::before{
+  content:"+"; position:absolute; top:0; left:0;
+  width:46px; height:46px; display:grid; place-items:center;
+  background:#F5C521; color:#000; font-weight:700;
+  border-bottom-right-radius:10px;
+}
+
+/* Body (only description now) */
+.cardBody{ padding:16px; border-top:1px solid #f1f3f5; }
+.cardDesc{ color:#6b7280; line-height:1.6; font-size:12px; }
+
+/* Focus ring for keyboard users */
+.card summary:focus{ outline:2px solid #3b82f6; outline-offset:2px; }
+
+/* Open animation */
+.card[open] .cardBody{ animation:fadeIn .18s ease-out; }
+@keyframes fadeIn{ from{opacity:.6; transform:translateY(-2px);} to{opacity:1; transform:none;} }
+
+/* Responsive */
+@media (max-width: 1024px){
+  .wrap { --padX: 48px; --gapGrid: 24px; }
+  .grid4 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+}
+@media (max-width: 767px){
+  .wrap { --padX: 20px; --gapSection: 56px; --gapGrid: 16px; }
+  .grid4, .grid2 { grid-template-columns: 1fr 1fr; margin: 0; }
+}
+@media (max-width: 480px){
+  .grid4, .grid2 { grid-template-columns: 1fr; }
+}
+/* ensure the <img> inside <picture> fills the hero box */
+.heroImgEl {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* fills nicely on desktop */
+  display: block;
+}
+
+/* optional: tweak mobile height and fit */
+@media (max-width: 767px) {
+  .heroImg {
+    height: clamp(180px, 40vw, 260px);  /* shorter banner on phones */
+  }
+  /* If you want the entire mobile image visible with no crop, use contain: */
+  /* .heroImgEl { object-fit: contain; background: #000; } */
+}
+
+@media (max-width: 767px) {
+    .wrap {
+  --gapSection: 28px; /* vertical spacing between sections */
+  --radius: 12px;
+  --border: #e9ecef;
+  --shadow: 0 4px 20px rgba(0,0,0,.06);
+}
+.divider{
+     margin: 0px;
+}
+}

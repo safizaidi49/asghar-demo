@@ -27,12 +27,12 @@ export default function HomePage() {
 
       <CategoryTiles
         items={[
-          { src: "/media/categories/flooring.webp", label: "FLOORINGS", href: "/category/floorings" },
-          { src: "/media/categories/curtains.webp", label: "CURTAINS", href: "/category/curtains" },
-          { src: "/media/categories/wallpapers.webp", label: "WALLPAPERS", href: "/category/wallpapers" },
-          { src: "/media/categories/office.webp", label: "OFFICES", href: "/category/offices" },
-          { src: "/media/categories/beddings.webp", label: "BEDDINGS", href: "/category/beddings" },
-          { src: "/media/categories/carpets.webp", label: "CARPETS", href: "/category/carpets" },
+          { src: "/media/categories/flooring.webp", label: "FLOORINGS", href: "/flooring" },
+          { src: "/media/categories/curtains.webp", label: "CURTAINS", href: "/curtains" },
+          { src: "/media/categories/wallpapers.webp", label: "WALLPAPERS", href: "/wallpapers" },
+          { src: "/media/categories/office.webp", label: "OFFICES", href: "/coming-soon" },
+          { src: "/media/categories/beddings.webp", label: "BEDDINGS", href: "#" },
+          { src: "/media/categories/carpets.webp", label: "CARPETS", href: "/carpets" },
         ]}
       />
       <FeatureSplit

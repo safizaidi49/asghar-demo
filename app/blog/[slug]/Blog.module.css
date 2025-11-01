@@ -1,0 +1,234 @@
+.page {
+    --padX: clamp(16px, 4vw, 72px);
+    --maxW: 1200px;
+    color: #111;
+    background: #fff;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    max-width: var(--maxW);
+    margin: 16px auto 8px;
+    padding: 0 var(--padX);
+    font-size: 14px;
+    color: #6b7280;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.breadcrumbs a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.crumbCurrent {
+    color: #111;
+}
+
+/* Header: title + intro (left) / feature image (right) */
+.header {
+    max-width: var(--maxW);
+    margin: 28px auto;
+    padding: 0 var(--padX);
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) 0.9fr;
+    grid-template-areas:
+        "title  figure"
+        "intro  figure";
+    gap: clamp(16px, 3vw, 32px);
+    align-items: start;
+}
+
+.title {
+    grid-area: title;
+    font-size: 44px;
+    line-height: 1.07;
+    /* margin: 8px 0 6px; */
+    font-weight: 500;
+}
+
+.intro {
+    grid-area: intro;
+    font-size: 17px;
+    line-height: 1.85;
+    color: #111;
+}
+
+.feature {
+    grid-area: figure;
+    margin: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, .08);
+}
+
+.feature img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Article */
+.article {
+    max-width: var(--maxW);
+    margin: 0 auto;
+    padding: 0 var(--padX);
+    font-size: 17px;
+    line-height: 1.85;
+}
+
+.article h2 {
+    font-size: clamp(22px, 2.6vw, 30px);
+    margin: 28px 0 10px;
+    line-height: 1.25;
+    font-weight: 600;
+}
+
+.article p {
+    margin: 10px 0 16px;
+}
+
+/* ===== FAQ (simple two-column, answers visible) ===== */
+/* FAQ */
+.faq {
+    max-width: var(--maxW);
+    margin: clamp(28px, 6vw, 64px) auto;
+    padding: 0 var(--padX);
+    padding: 20PX !important;
+    background: #F3F3F3;
+}
+
+.faqTitle {
+    text-align: center;
+    font-size: clamp(22px, 2.6vw, 38px);
+    margin: 0;
+}
+
+.faqKicker {
+    text-align: center;
+    color: #9aa1a9;
+    margin: 6px 0 20px;
+}
+
+.faqGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(14px, 2.5vw, 24px) clamp(18px, 3vw, 32px);
+}
+
+.faqItem {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 14px 16px;
+    background: #fff;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .04);
+}
+
+.faqItem summary {
+    list-style: none;
+    cursor: pointer;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.faqItem summary::-webkit-details-marker {
+    display: none;
+}
+
+.faqItem p {
+    margin: 6px 0 0;
+    color: #4b5563;
+}
+
+/* Wrap (common) */
+.wrap {
+    max-width: var(--maxW);
+    margin: clamp(24px, 6vw, 72px) auto clamp(36px, 8vw, 96px);
+    padding: 0 var(--padX);
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: clamp(16px, 3vw, 32px);
+    align-items: start;
+}
+
+.wrapHeading {
+    margin: 0 0 10px;
+    font-size: clamp(18px, 2.2vw, 24px);
+}
+
+.wrapBody {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #222;
+}
+
+/* --- New simple pill bars (flat design) --- */
+.barsSimple {
+    display: grid;
+    gap: 14px;
+}
+
+.badge {
+    display: block;
+    width: 100%;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #ffffff;
+    letter-spacing: .2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+}
+
+.blue {
+    background: #4fc3e0;
+}
+
+/* cyan */
+.green {
+    background: #4caf50;
+}
+
+/* green */
+
+/* Hide/disable the old progress styles if still present */
+.wrapBars,
+.barRow,
+.barRow i {
+    display: none !important;
+}
+
+/* Responsive */
+@media (max-width:1024px) {
+    .header {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "title"
+            "figure"
+            "intro";
+    }
+
+    .faqGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .wrap {
+        grid-template-columns: 1fr;
+    }
+    .title{
+font-size: 20px;
+    }
+    .intro,.wrapBody,.article p {
+        font-size:14px
+    }
+    .breadcrumbs{
+        font-size: 12px;
+        align-items: start;
+    }
+}

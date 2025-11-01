@@ -24,23 +24,48 @@ export default function Footer() {
       </section>
 
       {/* ===== Main Grid ===== */}
+      
       <section className={styles["af-grid"]}>
-        <div className={styles["brand"]}>
+        {/* <div className={styles["brand"]}>
           <Image src="/media/footer/AF-Logo.png" alt="Asghar Furniture" width={240} height={120} />
           <Image src="/media/footer/Footer-Logos-1.webp" alt="Since 1977" width={190} height={90} />
-        </div>
+        </div> */}
+        <div className={styles.brand}>
+  <div className={styles.brandBlock}>
+    <Image
+      src="/media/footer/AF-Logo.png"
+      alt="Asghar Furniture"
+      width={240}
+      height={120}
+      style={{ width: "100%", height: "auto" }}
+    />
+  </div>
+
+  {/* NEW: thin separator between the two images */}
+  <div className={styles.brandDivider} />
+
+  <div className={`${styles.brandBlock} ${styles.brandBadges}`}>
+    <Image
+      src="/media/footer/Footer-Logos-1.webp"
+      alt="Awards & Years"
+      width={240}
+      height={120}
+      style={{ width: "100%", height: "auto" }}
+    />
+  </div>
+</div>
 
         <div className={styles["know"]}>
           <h4>Know More</h4>
           <ul>
-            <li><Link href="#">About</Link></li>
+            <li><Link href="/about">About</Link></li>
             <li><Link href="#">Furniture Blogs</Link></li>
             <li><Link href="#">Bespoke Furniture</Link></li>
             <li><Link href="#">Track Your Order</Link></li>
-            <li><Link href="#">Delivery / Shipping</Link></li>
-            <li><Link href="#">Work With Us</Link></li>
-            <li><Link href="#">Contact</Link></li>
-            <li><Link href="#">FAQs</Link></li>
+            <li><Link href="/shipping">Delivery / Shipping</Link></li>
+            <li><Link href="/work-with-us">Work With Us</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
+            <li><Link href="/frequently-asked-questions">FAQs</Link></li>
           </ul>
         </div>
 
@@ -94,7 +119,7 @@ export default function Footer() {
           <h4 className={styles["follow-title"]}>Follow Us</h4>
           <div className={styles["socials"]}>
             {["facebook", "instagram", "x", "youtube", "tik-tok", "linkedin", "pinterest", "Untitled-design-2"].map((n) => (
-              <Image key={n} src={`/media/footer/${n}.png`} alt={n} width={26} height={26} />
+              <Image key={n} src={`/media/footer/${n}.png`} alt={n} width={20} height={20} />
             ))}
           </div>
         </div>
@@ -103,11 +128,11 @@ export default function Footer() {
       {/* ===== Bottom Bar ===== */}
       <section className={styles["af-bottom"]}>
         <nav className={styles["policies"]}>
-          <Link href="#">Cookie Policy</Link>
+          <Link href="/cookie-policy">Cookie Policy</Link>
           <span className={styles["sep"]} />
-          <Link href="#">Terms and Conditions</Link>
+          <Link href="/terms-and-conditions">Terms and Conditions</Link>
           <span className={styles["sep"]} />
-          <Link href="#">Privacy Policy</Link>
+          <Link href="/privacy-policy">Privacy Policy</Link>
         </nav>
         <div className={styles["payments"]}>
           <Image src="/media/footer/payment-methods-D.png" alt="Payment Methods" width={260} height={36} />
