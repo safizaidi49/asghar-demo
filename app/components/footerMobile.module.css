@@ -106,3 +106,7 @@
 .wrap {
   margin-top: clamp(12px, 3vw, 28px);
 }
+@media (max-width: 360px) {
+  .partnerLeft img { height: 20px !important; }
+}
+
