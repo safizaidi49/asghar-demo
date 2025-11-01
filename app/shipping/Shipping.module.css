@@ -1,0 +1,226 @@
+/* Whole page in light-grey */
+.page {
+    background: #F5F5F5;
+    color: #1a1a1a;
+}
+
+/* ========== HERO ========== */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 38dvh;
+    min-height: 260px;
+    overflow: hidden;
+}
+
+.heroImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.heroContent {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 clamp(16px, 4vw, 72px);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+}
+
+.title {
+    color: black;
+    font-size: clamp(18px, 3.5vw, 46px);
+    font-weight: 500;
+    margin: 0 0 8px;
+}
+
+.breadcrumbs {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: black;
+    font-size: 12px;
+}
+
+.crumb {
+    color: black;
+    text-decoration: none;
+    opacity: .9;
+}
+
+.crumb:hover {
+    text-decoration: underline;
+}
+
+.sep {
+    opacity: .75;
+}
+
+.crumbCurrent {
+    opacity: .9;
+}
+
+/* ========== INTRO + MAP ========== */
+.intro {
+    padding: clamp(24px, 4vw, 56px) clamp(16px, 4vw, 72px);
+}
+
+.h2 {
+    text-align: center;
+    font-size: clamp(24px, 3vw, 36px);
+    margin: 0 0 clamp(20px, 2vw, 32px);
+}
+
+.leadGrid {
+    display: grid;
+    gap: clamp(20px, 3vw, 40px);
+    grid-template-columns: 1fr;
+}
+
+.leadText {
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.h3 {
+    font-size: 20px;
+    margin: 0 0 12px;
+    font-weight: 700;
+}
+
+.mapWrap {
+    width: 100%;
+}
+
+.mapImg {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 12px;
+    /* card padding like your screenshot */
+}
+
+/* Desktop two-column for intro */
+@media (min-width: 1024px) {
+    .leadGrid {
+        grid-template-columns: 1.1fr .9fr;
+        align-items: center;
+    }
+}
+
+/* ========== FORM + ASIDE ========== */
+.formSection {
+    padding: 0 0 clamp(32px, 5vw, 64px);
+}
+
+.formGrid {
+    display: grid;
+    gap: clamp(20px, 3vw, 40px);
+    grid-template-columns: 1fr;
+    padding: 0 clamp(16px, 4vw, 72px);
+}
+
+.form {
+    background: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: clamp(16px, 3vw, 28px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .05);
+}
+
+.row2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 15px;
+    outline: none;
+    transition: border .2s;
+}
+
+.input:focus,
+.textarea:focus {
+    border-color: #111;
+}
+
+.textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.btn {
+    margin-top: 14px;
+    width: 100%;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #111;
+    background: #fff;
+    letter-spacing: .35em;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #111;
+    color: #fff;
+}
+
+.aside {
+    display: grid;
+    gap: 18px;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: clamp(16px, 3vw, 24px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .05);
+}
+
+/* Desktop two-column for form section */
+@media (min-width: 1024px) {
+    .formGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .row2 {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+}
+
+/* Mobile tweaks */
+@media (max-width: 767px) {
+  .hero {
+    height: auto;           /* let image decide height */
+    min-height: 0;
+  }
+  .heroImg {
+    width: 100%;
+    height: auto;           /* keep native aspect ratio */
+    object-fit: contain;    /* show full image */
+    display: block;
+    background: #F5F5F5;    /* avoids white bars behind transparent areas */
+  }
+  .heroContent {
+    /* keep the overlay text pinned inside the image area */
+    position: absolute;
+  }
+  .title{
+    margin:0px;
+  }
+}

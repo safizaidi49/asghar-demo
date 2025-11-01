@@ -65,8 +65,9 @@ export default function MobileMenu({ open, section, onClose, onOpenSection }: Pr
           ) : (
             <>
               {/* empty left cell so the X stays on the far right */}
-              <span />
+             
               <div className={styles.titleLeft}>CLOSE</div>
+               <span />
               <button className={styles.close} aria-label="Close" onClick={onClose}>✕</button>
             </>
           )}
