@@ -181,7 +181,7 @@
   font-size: 14px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  /* gap: 6px; */
 }
 
 .chev {
@@ -288,4 +288,37 @@
   gap: 10px;
   
 }
+}
+/* ===== Compact desktop header under 1400px ===== */
+@media (max-width: 1340px) {
+  /* overall spacing */
+  .dRow { padding: 12px 16px; }
+
+  /* logo */
+  .dLogo img,
+  .dLogo svg {  max-width: 80%; }
+
+  /* top nav */
+  .dNav ul { gap: 20px; }
+  .dNav a  { font-size: 12px; }            /* ← your ask */
+  .chev    { width: 14px; height: 14px; }
+
+  /* search */
+  .dSearch { padding: 6px 8px; }
+  .dSearch input { font-size: 12px; }      /* ← your ask */
+  .dSearch svg   { width: 18px; height: 18px; }
+
+  /* account link (text + icon) */
+  .account { gap: 6px; font-size: 12px; }  /* ← your ask */
+  .account svg { width: 18px; height: 18px; }
+
+  /* right-side icons (wishlist/cart) */
+  .dIcon, .iconBtn { width: 24px; height: 24px; }
+  .dIcon svg, .iconBtn svg { width: 18px; height: 18px; }
+
+  /* cart badge a touch smaller */
+  .badge {
+    min-width: 16px; height: 16px; line-height: 16px;
+    font-size: 10px;
+  }
 }

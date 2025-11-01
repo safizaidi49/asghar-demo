@@ -1,0 +1,119 @@
+.panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background: #fff;
+  border-top: 1px solid #efefef;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+  z-index: 1200;
+  pointer-events: none;
+}
+
+.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.inner {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 26px 22px 30px;
+}
+
+/* ===== Heading block ===== */
+.head {
+  margin-bottom: 18px;
+}
+
+.hTitle {
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+  margin: 0 0 6px 0;
+  color: #111;
+}
+
+.hRule {
+  width: 36px;
+  height: 3px;
+  background: #FFC83D; /* your brand gold */
+  border-radius: 2px;
+  margin: 0 0 10px 0;
+}
+
+.hSub {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* ===== Items grid ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.col {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 14px;
+  text-decoration: none;
+  color: #111;
+  padding: 10px 8px;
+  border-radius: 10px;
+}
+
+.item:hover {
+  background: #fafafa;
+}
+
+.iconWrap {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.txt { display: grid; gap: 2px; }
+
+.title {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.15;
+  letter-spacing: .2px;
+}
+
+.desc {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.35;
+}
+
+@media (max-width: 1023px) {
+  .panel { display: none; }
+}
