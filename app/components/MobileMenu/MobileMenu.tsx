@@ -24,11 +24,11 @@ export default function MobileMenu({ open, section, onClose, onOpenSection }: Pr
   }, [open]);
 
   const main = [
-    { label: "BEDROOMS", href: "/category/bedrooms", isSection: true, sec: "bedroom" as const },
-    { label: "LIVING ROOM", href: "/category/living-room", isSection: true, sec: "living" as const },
-    { label: "NEW ARRIVALS", href: "/new-arrivals" },
-    { label: "ASGHAR DEALS", href: "/deals" },
-    { label: "FURNITURE PACKAGES", href: "/category/furniture-packages" },
+    { label: "BEDROOMS", href: "#", isSection: true, sec: "bedroom" as const },
+    { label: "LIVING ROOM", href: "#", isSection: true, sec: "living" as const },
+    { label: "NEW ARRIVALS", href: "/new-arrival" },
+    { label: "ASGHAR DEALS", href: "/asghar-deal" },
+    { label: "FURNITURE PACKAGES", href: "/coming-soon" },
   ];
 
   const items: MegaItem[] =
