@@ -154,3 +154,32 @@ html, body { width: 100%; max-width: 100%; overflow-x: hidden; margin: 0; }
   .af-btn{ height:46px; }
   .summary-row span{ min-width:0; overflow-wrap:anywhere; }
 }
+/* ===== Mode tabs (Guest / Sign in / Create account) ===== */
+.mode-tabs{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.mode-tab{
+  border:1px solid var(--border);
+  background:#fff;
+  color:#111;
+  border-radius:10px;
+  padding:12px 10px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.15s;
+}
+.mode-tab:hover{ background: var(--muted); }
+
+.mode-tab.is-active{
+  background: #000072;          /* secondary navy */
+  border-color: #000072;
+  color:#fff;
+}
+
+/* small screens: stack neatly */
+@media (max-width: 480px){
+  .mode-tabs{ grid-template-columns: 1fr; }
+}

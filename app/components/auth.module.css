@@ -1,0 +1,184 @@
+/* ===== Asghar Furniture – Auth Pages (Responsive & Premium) ===== */
+:root {
+  --af-primary: #f7c115;
+  --af-secondary: #000072;
+  --af-bg: #ffffff;
+  --af-muted: #6b7280;
+  --af-text: #111827;
+  --af-border: #e5e7eb;
+}
+
+/* Center everything */
+.af-auth-wrap {
+  min-height: 70dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, var(--af-secondary) 35%, #0a0a3d 100%);
+  padding: 20px;
+}
+
+/* Card */
+.af-auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--af-bg);
+  border-radius: 18px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  padding: 36px 28px;
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.af-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--af-secondary);
+  margin-bottom: 6px;
+}
+
+.af-sub {
+  color: var(--af-muted);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+/* Inputs */
+.af-field {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.af-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--af-text);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.af-input-row {
+  position: relative;
+}
+
+.af-input {
+  width: 100%;
+  border: 1px solid var(--af-border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+  color: var(--af-text);
+  background: #fff;
+  outline: none;
+  transition: border 0.15s ease;
+}
+
+.af-input:focus {
+  border-color: var(--af-primary);
+  box-shadow: 0 0 0 3px rgba(247, 193, 21, 0.2);
+}
+
+.af-eye {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #444;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Buttons */
+.af-btn {
+  width: 100%;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--af-primary);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.af-btn:hover {
+  background: #ffdb42;
+}
+
+.af-btn:active {
+  transform: scale(0.98);
+}
+
+.af-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.af-ghost {
+  background: #fff;
+  color: var(--af-secondary);
+  border: 1.5px solid var(--af-secondary);
+}
+
+.af-ghost:hover {
+  background: var(--af-secondary);
+  color: #fff;
+}
+
+/* Alignments */
+.af-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 18px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.af-remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--af-muted);
+  font-size: 13px;
+}
+
+.af-help {
+  font-size: 13px;
+  color: var(--af-muted);
+  margin-top: 14px;
+  text-align: center;
+}
+
+.af-link {
+  color: var(--af-secondary);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.af-error {
+  color: #b91c1c;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+@media (max-width: 600px) {
+  .af-auth-card {
+    padding: 28px 20px;
+  }
+  .af-title {
+    font-size: 22px;
+  }
+}
+
+/* error visuals */
+.af-input--error { border-color:#b91c1c !important; box-shadow:0 0 0 3px rgba(185,28,28,.12) !important; }
+.af-error { color:#b91c1c; font-size:12px; margin-top:6px; }
